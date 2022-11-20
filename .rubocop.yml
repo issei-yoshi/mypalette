@@ -1,1 +1,9 @@
 inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance # 拡張機能
+  - rubocop-rails # 拡張機能
+  - rubocop-rspec # 拡張機能
+
+AllCops:
+  NewCops: enable
