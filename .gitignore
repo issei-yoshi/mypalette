@@ -28,6 +28,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore installed gem files.
+/vendor/bundle
+
 /public/packs
 /public/packs-test
 /node_modules
