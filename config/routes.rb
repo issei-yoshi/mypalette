@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get "about" => "homes#about"
 
   resources :users, only: [:new, :create]
+
+  get 'login', to: 'user_sessions#new'
+  post 'login', to: 'user_sessions#create'
 end
