@@ -1,5 +1,6 @@
 <div class="w-full max-w-sm my-12">
-  <%= form_with model: @user, local: true do |f| %>
+<%= form_with model: @user, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
     <div class="">
       <div class="pt-5 pb-2">
         <%= f.label :last_name, "姓" %>
