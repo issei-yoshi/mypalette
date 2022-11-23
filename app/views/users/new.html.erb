@@ -1,18 +1,43 @@
-<%= form_with model: @user, local: true do |f| %>
-  <%= f.label :last_name, "姓" %>
-  <%= f.text_field :last_name %>
+<div class="w-full max-w-sm my-12">
+  <%= form_with model: @user, local: true do |f| %>
+    <div class="">
+      <div class="pt-5 pb-2">
+        <%= f.label :last_name, "姓" %>
+      </div>
+      <%= f.text_field :last_name, class: 'rounded border border-gray-200 p-1' %>
+    </div>
 
-  <%= f.label :first_name, "名" %>
-  <%= f.text_field :first_name %>
+    <div class="">
+      <div class="pt-5 pb-2">
+        <%= f.label :first_name, "名" %>
+      </div>
+      <%= f.text_field :first_name, class: 'rounded border border-gray-200 p-1' %>
+    </div>
 
-  <%= f.label :email, "メールアドレス" %>
-  <%= f.email_field :email %>
+    <div class="">
+      <div class="pt-5 pb-2">
+        <%= f.label :email, "メールアドレス" %>
+      </div>
+      <%= f.email_field :email, class: 'rounded border border-gray-200 p-1' %>
+    </div>
 
-  <%= f.label :password, "パスワード" %>
-  <%= f.password_field :password %>
+    <div class="">
+      <div class="pt-5 pb-2">
+        <%= f.label :password, "パスワード" %>
+      </div>
+      <%= f.password_field :password, class: 'rounded border border-gray-200 p-1' %>
+    </div>
 
-  <%= f.label :password_confirmation, "パスワード確認" %>
-  <%= f.password_field :password_confirmation %>
+    <div class="">
+      <div class="pt-5 pb-2">
+        <%= f.label :password_confirmation, "パスワード確認" %>
+      </div>
+      <%= f.password_field :password_confirmation, class: 'rounded border border-gray-200 p-1' %>
+    </div>
 
-  <%= f.submit '登録' %>
-<% end %>
+    <div class="my-8">
+      <%= f.submit '登録' %>
+    </div>
+  <% end %>
+</div>
+</div>
