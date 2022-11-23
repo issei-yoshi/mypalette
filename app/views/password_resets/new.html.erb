@@ -1,2 +1,16 @@
-<h1>PasswordResets#new</h1>
-<p>Find me in app/views/password_resets/new.html.erb</p>
+<div class="w-full max-w-sm my-12">
+  <h1>パスワードリセット</h1>
+  <%= form_with url: password_resets_path, local: true do |f| %>
+      <div class="">
+        <div class="pt-5 pb-2">
+        <%= f.label :email %>
+        </div>
+        <%= f.email_field :email, class: 'rounded border border-gray-200 p-1' %>
+      </div>
+
+      <div class="my-8">
+        <%= f.submit '送信' %>
+      </div>
+    <% end %>
+  </div>
+</div>
