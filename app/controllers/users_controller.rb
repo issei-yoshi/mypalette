@@ -5,10 +5,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    binding.pry
+    # binding.pry
     if @user.save
+      flash[:success] =  '成功しました'
       redirect_to root_path
     else
+      flash.now[:danger] = '失敗しました'
       render :new
     end
   end
