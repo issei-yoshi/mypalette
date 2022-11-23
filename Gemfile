@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'pry-rails'
 # gem 'rails-i18n', '~> 6.0'
 gem 'sorcery'
 
@@ -46,6 +45,8 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+
+  gem 'pry-byebug'
 
   gem 'rubocop', '~> 1.29', require: false
   gem 'rubocop-performance', require: false
