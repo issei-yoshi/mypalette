@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pry-rails'
-gem 'rails-i18n'
+# gem 'rails-i18n', '~> 6.0'
 gem 'sorcery'
 
 group :development, :test do
