@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root "homes#about"
   get "about" => "homes#about"
+  get "terms_of_use" => "homes#terms"
 
   resources :users, only: [:new, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]
