@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "homes#about"
   get "about" => "homes#about"
   get "terms_of_use" => "homes#terms"
+  get "privacy_policy" => "homes#policy"
 
   resources :users, only: [:new, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]
