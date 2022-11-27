@@ -13,4 +13,10 @@ class Admin::UserSessionsController < Admin::BaseController
     end
   end
 
+  def destroy
+    logout
+    flash[:success] = "adminログアウト成功"
+    redirect_to admin_root_path
+  end
+
 end
