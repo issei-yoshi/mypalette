@@ -3,3 +3,25 @@
   height: 500px;
   background-size:cover;
 }
+
+@media screen and (min-width:768px) {
+  .parent {
+    position: relative;
+  }
+
+  .child {
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .child {
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+  }
+}
