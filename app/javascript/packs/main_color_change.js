@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   main.addEventListener('input', function(e){
     const colorVal = e.target.value
-    
+
     mainChangeEls.forEach(function(el) {
       el.style.color = colorVal
     })
