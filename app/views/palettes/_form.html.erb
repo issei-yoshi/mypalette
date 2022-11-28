@@ -1,0 +1,30 @@
+<%= form_with model: palette, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="sm:flex justify-between my-5">
+
+    <div class="border flex m-2 lg:p-4">
+      <div class="px-3 my-auto w-4/6">
+        <%= f.label :main, "Main Color" %>
+      </div>
+      <%= f.color_field :main, class: "colorinput my-auto" %>
+    </div>
+
+    <div class="border flex m-2 lg:p-4">
+      <div class="px-3 my-auto w-4/6">
+        <%= f.label :sub, "Sub Color" %>
+      </div>
+      <%= f.color_field :sub, class: "colorinput my-auto" %>
+    </div>
+
+    <div class="border flex m-2 lg:p-4">
+      <div class="px-3 my-auto w-4/6">
+        <%= f.label :body, "Body Color" %>
+      </div>
+      <%= f.color_field :body, class: "colorinput my-auto" %>
+    </div>
+
+    <div class="px-5 my-auto">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
