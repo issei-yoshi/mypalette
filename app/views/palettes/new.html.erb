@@ -1,2 +1,17 @@
-<h1>Palettes#new</h1>
-<p>Find me in app/views/palettes/new.html.erb</p>
+<%= form_with model: @palette, local: true do |f| %>
+  <div>
+    <%= f.label :main, "Main Color" %>
+    <%= f.text_field :main %>
+  </div>
+  <div>
+    <%= f.label :sub, "Sub Color" %>
+    <%= f.text_field :sub %>
+  </div>
+  <div>
+    <%= f.label :body, "Body Color" %>
+    <%= f.text_field :body %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
