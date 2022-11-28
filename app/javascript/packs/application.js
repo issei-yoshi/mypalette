@@ -13,4 +13,4 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "./colorchange"
+import "./main_color_change"
