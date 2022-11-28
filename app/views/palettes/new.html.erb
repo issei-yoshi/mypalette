@@ -1,4 +1,5 @@
 <%= form_with model: @palette, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.label :main, "Main Color" %>
     <%= f.text_field :main %>
