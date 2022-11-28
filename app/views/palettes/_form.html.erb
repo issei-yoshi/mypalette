@@ -2,15 +2,15 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.label :main, "Main Color" %>
-    <%= f.color_field :main %>
+    <%= f.color_field :main, class: "colorinput" %>
   </div>
   <div>
     <%= f.label :sub, "Sub Color" %>
-    <%= f.color_field :sub %>
+    <%= f.color_field :sub, class: "colorinput" %>
   </div>
   <div>
     <%= f.label :body, "Body Color" %>
-    <%= f.color_field :body %>
+    <%= f.color_field :bod, class: "colorinput" %>
   </div>
   <div>
     <%= f.submit %>
