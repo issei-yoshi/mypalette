@@ -1,1 +1,3 @@
-console.log('Is it valid?');
+document.addEventListener("DOMContentLoaded", function () {
+
+})
