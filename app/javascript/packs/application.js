@@ -12,3 +12,5 @@ import "stylesheets/application.css"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "./main_color_change"
