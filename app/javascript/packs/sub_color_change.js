@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const main = document.querySelector('.sub-color');
-  let mainChangeEls = document.querySelectorAll('.main-change');
-  let mainChangeElBgs = document.querySelectorAll('.main-change-bg');
+  const sub = document.querySelector('.sub-color');
+  let subChangeEls = document.querySelectorAll('.sub-change');
+  let subChangeElBgs = document.querySelectorAll('.sub-change-bg');
 
-  main.addEventListener('input', function(e){
+  sub.addEventListener('input', function(e){
     const colorVal = e.target.value
-    mainChangeEls.forEach(function(el) {
+    subChangeEls.forEach(function(el) {
       el.style.color = colorVal
     })
-    mainChangeElBgs.forEach(function(el) {
+    subChangeElBgs.forEach(function(el) {
       el.style.backgroundColor = colorVal
     })
   });
