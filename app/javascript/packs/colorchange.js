@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const main = document.querySelector('#main-color');
-  // let mainVal = document.querySelector('#main-color').value;
+  let mainChangeEls = document.querySelectorAll('.main-change');
 
   main.addEventListener('input', function(e){
-    // mainVal = e.target.value
-    // console.log(mainVal);
+    const colorVal = e.target.value
+    mainChangeEls.forEach(function(el) {
+      el.style.color = colorVal
+    })
   });
 })
