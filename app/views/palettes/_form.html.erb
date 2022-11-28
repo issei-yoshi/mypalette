@@ -1,0 +1,18 @@
+<%= form_with model: palette, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div>
+    <%= f.label :main, "Main Color" %>
+    <%= f.text_field :main %>
+  </div>
+  <div>
+    <%= f.label :sub, "Sub Color" %>
+    <%= f.text_field :sub %>
+  </div>
+  <div>
+    <%= f.label :body, "Body Color" %>
+    <%= f.text_field :body %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
