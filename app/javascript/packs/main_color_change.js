@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const main = document.querySelector('#main-color');
+  const main = document.querySelector('.main-color');
   let mainChangeEls = document.querySelectorAll('.main-change');
   let mainChangeElBgs = document.querySelectorAll('.main-change-bg');
 
