@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const main = document.querySelector('#main-color');
+  // let mainVal = document.querySelector('#main-color').value;
 
-  main.addEventListener('click', clickColor);
+  main.addEventListener('input', function(e){
+    // mainVal = e.target.value
+    // console.log(mainVal);
+  });
 })
