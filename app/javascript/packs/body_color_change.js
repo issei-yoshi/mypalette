@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const sub = document.querySelector('.sub-color');
-  let subChangeEls = document.querySelectorAll('.sub-change');
-  let subChangeElBgs = document.querySelectorAll('.sub-change-bg');
+  const body = document.querySelector('.body-color');
+  let bodyChangeEls = document.querySelectorAll('.body-change');
+  let bodyChangeElBgs = document.querySelectorAll('.body-change-bg');
 
-  sub.addEventListener('input', function(e){
+  body.addEventListener('input', function(e){
     const colorVal = e.target.value
-    subChangeEls.forEach(function(el) {
+    bodyChangeEls.forEach(function(el) {
       el.style.color = colorVal
     })
-    subChangeElBgs.forEach(function(el) {
+    bodyChangeElBgs.forEach(function(el) {
       el.style.backgroundColor = colorVal
     })
   });
