@@ -6,21 +6,21 @@
       <div class="px-3 my-auto w-4/6">
         <%= f.label :main, "Main Color" %>
       </div>
-      <%= f.color_field :main, class: "main-color colorinput my-auto" %>
+      <%= f.color_field :main, class: "main-color colorinput my-auto", value: palette.main %>
     </div>
 
     <div class="border flex m-2 lg:p-4">
       <div class="px-3 my-auto w-4/6">
         <%= f.label :sub, "Sub Color" %>
       </div>
-      <%= f.color_field :sub, class: "sub-color colorinput my-auto" %>
+      <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: palette.sub %>
     </div>
 
     <div class="border flex m-2 lg:p-4">
       <div class="px-3 my-auto w-4/6">
         <%= f.label :body, "Body Color" %>
       </div>
-      <%= f.color_field :body, class: "body-color colorinput my-auto" %>
+      <%= f.color_field :body, class: "body-color colorinput my-auto", value: palette.body %>
     </div>
 
     <div class="px-5 my-auto">
