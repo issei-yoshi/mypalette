@@ -1,2 +1,5 @@
-<h1>Palettes#show</h1>
-<p>Find me in app/views/palettes/show.html.erb</p>
+<%= render 'form', {palette: @palette} %>
+
+<%= javascript_pack_tag 'color/initial_main_change' %>
+<%= javascript_pack_tag 'color/initial_sub_change' %>
+<%= javascript_pack_tag 'color/initial_body_change' %>
