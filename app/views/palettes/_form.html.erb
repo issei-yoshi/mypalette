@@ -22,9 +22,10 @@
       </div>
       <%= f.color_field :body, class: "body-color colorinput my-auto", value: palette.body %>
     </div>
-
-    <div class="px-5 my-auto">
-      <%= f.submit %>
-    </div>
+    <% if current_page?(new_palette_path) %>
+      <div class="px-5 my-auto">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
 <% end %>
