@@ -2,30 +2,53 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="sm:flex justify-between my-5">
 
-    <div class="border flex m-2 lg:p-4">
-      <div class="px-3 my-auto w-4/6">
-        <%= f.label :main, "Main Color" %>
+    <div class="border m-2 lg:p-4">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :main, "Main Color" %>
+        </div>
+        <div>
+          <%= f.color_field :main, class: "main-color colorinput my-auto", value: palette.main %>
+        </div>
       </div>
-      <%= f.color_field :main, class: "main-color colorinput my-auto", value: palette.main %>
+      <div class="text-center">
+        <%= palette.main %>
+      </div>
     </div>
 
-    <div class="border flex m-2 lg:p-4">
-      <div class="px-3 my-auto w-4/6">
-        <%= f.label :sub, "Sub Color" %>
+    <div class="border m-2 lg:p-4">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :sub, "Sub Color" %>
+        </div>
+        <div>
+          <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: palette.sub %>
+        </div>
       </div>
-      <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: palette.sub %>
+      <div class="text-center">
+        <%= palette.sub %>
+      </div>
     </div>
 
-    <div class="border flex m-2 lg:p-4">
-      <div class="px-3 my-auto w-4/6">
-        <%= f.label :body, "Body Color" %>
+    <div class="border m-2 lg:p-4">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :body, "Body Color" %>
+        </div>
+        <div>
+          <%= f.color_field :body, class: "body-color colorinput my-auto", value: palette.body %>
+        </div>
       </div>
-      <%= f.color_field :body, class: "body-color colorinput my-auto", value: palette.body %>
+      <div class="text-center">
+        <%= palette.body %>
+      </div>
     </div>
+
     <% if current_page?(new_palette_path) %>
       <div class="px-5 my-auto">
         <%= f.submit %>
       </div>
     <% end %>
+
   </div>
 <% end %>
