@@ -16,3 +16,4 @@ ActiveStorage.start()
 import "./main_color_change"
 import "./sub_color_change"
 import "./body_color_change"
+import "./initial_main_change"
