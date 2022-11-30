@@ -50,5 +50,9 @@
       </div>
     <% end %>
 
+    <% if current_user.own?(palette) %>
+      <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
+    <% end %>
+
   </div>
 <% end %>

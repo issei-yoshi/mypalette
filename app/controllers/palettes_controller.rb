@@ -18,6 +18,13 @@ class PalettesController < ApplicationController
     @palette = Palette.find(params[:id])
   end
 
+  def destroy
+    @palette = current_user.palettes.find(params[:id])
+    @palette.destroy!
+    flash[:success] = "カラー削除成功しました"
+    redirect_to new_palette_path
+  end
+
   private
 
   def palette_params
