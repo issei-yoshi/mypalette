@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
+    get 'colors' => 'colors#index'
   end
 
   get 'login', to: 'user_sessions#new'
