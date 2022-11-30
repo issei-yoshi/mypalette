@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :palettes, only: [:new, :create, :show, :destroy]
 
+  resource :profile, only: [:edit, :show, :update]
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
