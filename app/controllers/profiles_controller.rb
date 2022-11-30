@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
   def show
-    @user = User.find(curret_user.id)
+    @user = User.find(current_user.id)
   end
 end
