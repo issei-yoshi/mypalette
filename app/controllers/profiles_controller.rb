@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
       redirect_back fallback_location:root_path
     else
       flash.now[:danger] = '編集に失敗しました'
-      render :new
+      render :edit
     end
   end
 
