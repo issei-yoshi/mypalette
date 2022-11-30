@@ -4,7 +4,7 @@ class PalettesController < ApplicationController
   end
 
   def create
-    @palette = Palette.new(palette_params)
+    @palette = current_user.palettes.new(palette_params)
     if @palette.save
       flash[:success] = "カラー作成成功しました"
       redirect_to root_path
