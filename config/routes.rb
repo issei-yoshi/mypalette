@@ -11,10 +11,9 @@ Rails.application.routes.draw do
 
   resources :palettes, only: [:new, :create, :show, :destroy]
 
-    # resource :profile, only: [:edit, :show, :update]
-    get 'mypage/profile' => 'profiles#show'
-    get 'mypage/profile/edit' => 'profiles#edit'
-    patch 'mypage/profile' => 'profiles#update'
+  namespace :mypage do
+    resource :profile, only: [:edit, :show, :update]
+  end
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
