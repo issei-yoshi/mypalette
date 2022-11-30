@@ -1,46 +1,37 @@
-<div>
+<div class="my-5">
   <% @palettes.each do |palette| %>
-    <div class="sm:flex justify-between">
+    <div class="flex md:justify-between">
 
-      <div class="border m-2 lg:p-4">
+      <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
         <div class="flex ">
-          <div class="px-3 my-auto w-4/6">
-            Main Color
+          <div class="px-1 my-auto w-5/6">
+            <%= palette.main %>
           </div>
           <div>
             <input type="color" class="main-color colorinput my-auto" value=<%= palette.main %> disabled='true' %>
           </div>
         </div>
-        <div class="text-center">
-          <%= palette.main %>
-        </div>
       </div>
 
-      <div class="border m-2 lg:p-4">
+      <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
         <div class="flex ">
-          <div class="px-3 my-auto w-4/6">
-            Sub Color
+          <div class="px-1 my-auto w-5/6">
+            <%= palette.sub %>
           </div>
           <div>
             <input type="color"class="sub-color colorinput my-auto" value=<%= palette.sub %> disabled='true' %>
           </div>
         </div>
-        <div class="text-center">
-          <%= palette.sub %>
-        </div>
       </div>
 
-      <div class="border m-2 lg:p-4">
+      <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
         <div class="flex ">
-          <div class="px-3 my-auto w-4/6">
-            Body Color
+          <div class="px-1 my-auto w-5/6">
+            <%= palette.body %>
           </div>
           <div>
             <input type="color" class="body-color colorinput my-auto" value=<%= palette.body %> disabled='true' %>
           </div>
-        </div>
-        <div class="text-center">
-          <%= palette.body %>
         </div>
       </div>
     </div>
