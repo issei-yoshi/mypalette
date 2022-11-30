@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   resources :palettes, only: [:new, :create, :show, :destroy]
 
+  namespace :mypage do
+    resource :profile, only: [:edit, :show, :update]
+    get 'colors' => 'colors#index'
+  end
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
