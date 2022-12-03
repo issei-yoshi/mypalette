@@ -22,6 +22,13 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
+    flash[:success] = "削除に成功しました"
+    redirect_to admin_users_path
+  end
+
   private
 
   def user_params
