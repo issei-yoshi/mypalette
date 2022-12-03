@@ -1,4 +1,6 @@
 class Admin::ColorsController < Admin::BaseController
+  layout 'admin/layouts/admin_colorless'
+
   def index
     @palettes = Palette.includes(:user)
   end
