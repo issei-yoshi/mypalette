@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::BaseController
   layout 'admin/layouts/admin_colorless'
+
   def index
     @users = User.all
   end
