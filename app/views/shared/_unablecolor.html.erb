@@ -1,39 +1,50 @@
 <div class="flex md:justify-between my-5">
 
   <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
-    <div class="md:flex">
+    <div class="md:flex ">
       <div class="px-1 my-auto w-5/6">
-        <%= palette.main %>
+        Main Color
       </div>
       <div class="text-center">
         <input type="color" class="main-color colorinput my-auto" value=<%= palette.main %> disabled='true' %>
       </div>
     </div>
-  </div>
-
-  <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
-    <div class="md:flex">
-      <div class="px-1 my-auto w-5/6">
-        <%= palette.sub %>
-      </div>
-      <div class="text-center">
-        <input type="color"class="sub-color colorinput my-auto" value=<%= palette.sub %> disabled='true' %>
-      </div>
+    <div class="text-center">
+      <%= palette.main %>
     </div>
   </div>
 
   <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
-    <div class="md:flex">
+    <div class="md:flex ">
       <div class="px-1 my-auto w-5/6">
-        <%= palette.body %>
+        Sub Color
+      </div>
+      <div class="text-center">
+        <input type="color" class="sub-color colorinput my-auto" value=<%= palette.sub %> disabled='true' %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= palette.sub %>
+    </div>
+  </div>
+
+  <div class="border sm:m-0 md:m-2 lg:p-4 w-2/6">
+    <div class="md:flex ">
+      <div class="px-1 my-auto w-5/6">
+        Body Color
       </div>
       <div class="text-center">
         <input type="color" class="body-color colorinput my-auto" value=<%= palette.body %> disabled='true' %>
       </div>
     </div>
+    <div class="text-center">
+      <%= palette.body %>
+    </div>
   </div>
 
-</div>
-<div class="my-auto">
-  <%= render partial: 'shared/button', locals: { palette: palette} %>
+
+  <div class="my-auto">
+    <%= render partial: 'shared/button', locals: { palette: palette} %>
+  </div>
+
 </div>
