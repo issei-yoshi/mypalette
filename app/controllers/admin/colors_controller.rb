@@ -22,6 +22,10 @@ class Admin::ColorsController < Admin::BaseController
   end
 
   def destroy
+    @palette = Palette.find(params[:id])
+    @palette.destroy!
+    flash[:success] = "カラーを削除しました"
+    redirect_to admin_colors_path
   end
 
   private
