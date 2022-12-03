@@ -1,4 +1,4 @@
-<%= render 'form', {palette: @palette} %>
+<%= render partial: 'shared/unablecolor', locals: {palette: @palette} %>
 
 <%= javascript_pack_tag 'color/initial_main_change' %>
 <%= javascript_pack_tag 'color/initial_sub_change' %>
