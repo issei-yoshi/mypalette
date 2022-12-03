@@ -10,4 +10,15 @@ class Admin::UsersController < Admin::BaseController
   def edit
     @user = User.find(params[:id])
   end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "更新に成功しました"
+      redirect_to admin_user_path(@user)
+    else
+      flash.now[:danger] = "更新に失敗しました"
+      render :edit
+    end
+  end
 end
