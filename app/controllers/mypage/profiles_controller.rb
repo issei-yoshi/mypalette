@@ -1,4 +1,6 @@
 class Mypage::ProfilesController < ApplicationController
+  layout 'layouts/colorless'
+
   def show
     @user = User.find(current_user.id)
   end

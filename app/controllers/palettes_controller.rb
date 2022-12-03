@@ -1,4 +1,6 @@
 class PalettesController < ApplicationController
+  skip_before_action :require_login, only: %i[new]
+
   def new
     @palette = Palette.new
   end
@@ -7,7 +9,7 @@ class PalettesController < ApplicationController
     @palette = current_user.palettes.new(palette_params)
     if @palette.save
       flash[:success] = "カラー作成成功しました"
-      redirect_to root_path
+      redirect_to palette_path(@palette)
     else
       flash.now[:danger] = "カラー作成失敗しました"
       render :new

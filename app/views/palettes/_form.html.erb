@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="sm:flex justify-between my-5">
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :main, "Main Color" %>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :sub, "Sub Color" %>
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :body, "Body Color" %>
@@ -44,14 +44,10 @@
       </div>
     </div>
 
-    <% if current_page?(new_palette_path) %>
-      <div class="px-5 my-auto">
-        <%= f.submit %>
+    <% if %w[root new_palette].any? {|name| current_page?(send("#{name}_path"))} %>
+      <div class="text-center my-auto">
+        <%= f.submit '登録', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1" %>
       </div>
-    <% end %>
-
-    <% if current_user.own?(palette) %>
-      <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
     <% end %>
 
   </div>
