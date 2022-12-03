@@ -1,6 +1,6 @@
 class Admin::ColorsController < Admin::BaseController
   def index
-    @palettes = Palette.all
+    @palettes = Palette.includes(:user)
   end
 
   def show
