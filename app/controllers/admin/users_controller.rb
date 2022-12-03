@@ -21,4 +21,10 @@ class Admin::UsersController < Admin::BaseController
       render :edit
     end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:last_name, :first_name, :email)
+  end
 end
