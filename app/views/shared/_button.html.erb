@@ -1,5 +1,14 @@
-<% if current_user&.own?(palette) %>
-  <button class="bg-gray-400 hover:bg-gray-300 text-white rounded px-3 py-2">
-    <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
-  </button>
-<% end %>
+<div>
+  <% if  %w[admin_colors].any? {|name| current_page?(send("#{name}_path"))} %>
+    <button class="bg-gray-400 hover:bg-gray-300 text-white rounded px-3 py-2">
+      <%= link_to "編集", edit_admin_color_path(palette) %>
+    </button>
+    <button class="bg-gray-400 hover:bg-gray-300 text-white rounded px-3 py-2">
+      <%= link_to "削除", admin_color_path(palette), method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
+    </button>
+  <% elsif current_user&.own?(palette) %>
+    <button class="bg-gray-400 hover:bg-gray-300 text-white rounded px-3 py-2">
+      <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
+    </button>
+  <% end %>
+</div>
