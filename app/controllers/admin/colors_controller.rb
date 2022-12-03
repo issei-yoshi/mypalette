@@ -7,6 +7,7 @@ class Admin::ColorsController < Admin::BaseController
   end
 
   def edit
+    @palette = Palette.find(params[:id])
   end
 
   def update
