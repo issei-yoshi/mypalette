@@ -20,3 +20,6 @@
     <td><%= @user.created_at %></td>
   </tr>
 </table>
+
+<%= link_to "編集", edit_admin_user_path(@user) %>
+<%= link_to "戻る", admin_users_path %>
