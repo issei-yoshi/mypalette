@@ -1,5 +1,6 @@
 class Admin::ColorsController < Admin::BaseController
   def index
+    @palettes = Palette.all
   end
 
   def show
