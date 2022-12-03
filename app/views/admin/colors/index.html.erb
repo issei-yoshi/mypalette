@@ -40,7 +40,7 @@
       </div>
 
       <%= link_to "編集", edit_admin_color_path(palette) %>
-      <%= link_to "削除", "#" %>
+      <%= link_to "削除", admin_color_path(palette), method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
 
     </div>
 
