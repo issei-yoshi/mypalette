@@ -23,4 +23,10 @@ class Admin::ColorsController < Admin::BaseController
 
   def destroy
   end
+
+  private
+
+  def palette_params
+    params.require(:palette).permit(:main, :sub, :body)
+  end
 end
