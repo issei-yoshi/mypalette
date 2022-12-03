@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  root "static_pages#top"
+  root "palettes#new"
   get "about" => "homes#about"
   get "terms_of_use" => "homes#terms"
   get "privacy_policy" => "homes#policy"
