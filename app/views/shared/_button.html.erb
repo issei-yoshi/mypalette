@@ -6,9 +6,16 @@
     <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
       <%= link_to "削除", admin_color_path(palette), method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
     </button>
-  <% elsif current_user&.own?(palette) %>
+  <% elsif current_page?(mypage_colors_path) %>
+    <button class="bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1">
+      <%= link_to '詳細', palette_path(palette), data: {"turbolinks" => false} %>
+    </button>
     <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
       <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
+    </button>
+  <% elsif current_user&.own?(palette) %>
+    <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
+      <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますかshow?" } %>
     </button>
   <% end %>
 </div>
