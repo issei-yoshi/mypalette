@@ -1,24 +1,26 @@
-<div class="w-full max-w-sm my-12">
+<div class="w-2/3">
+  <%= render 'mypage/shared/activebutton' %>
 
-    <div class="">
-      <div class="pt-5 pb-2">
-        登録日
+  <div class="mx-auto w-full max-w-sm my-12">
+      <div class="">
+        <div class="pt-5 pb-2">
+          登録日
+        </div>
+        <%= l @user.created_at, format: :short %>
       </div>
-      <%= l @user.created_at, format: :short %>
-    </div>
 
-    <div class="">
-      <div class="pt-5 pb-2">
-        名前
+      <div class="">
+        <div class="pt-5 pb-2">
+          名前
+        </div>
+        <%= @user.last_name %>
       </div>
-      <%= @user.last_name %>
-    </div>
 
-    <div class="">
-      <div class="pt-5 pb-2">
-        メールアドレス
+      <div class="">
+        <div class="pt-5 pb-2">
+          メールアドレス
+        </div>
+        <%= @user.email %>
       </div>
-      <%= @user.email %>
-    </div>
-
+  </div>
 </div>
