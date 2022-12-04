@@ -1,5 +1,17 @@
-<div class="my-5">
-  <% @palettes.each do |palette| %>
-    <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
-  <% end %>
+<div class="">
+  <div class="flex my-5">
+    <div class="p-2 text-center bg-gray-100 w-1/2">
+      <%= link_to "Profile", "#", class:"" %>
+    </div>
+    <div class="p-2 text-center bg-gray-200 w-1/2">
+      <%= link_to "My colors", "#", class:"" %>
+    </div>
+  </div>
+
+
+  <div class="my-5">
+    <% @palettes.each do |palette| %>
+      <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
+    <% end %>
+  </div>
 </div>
