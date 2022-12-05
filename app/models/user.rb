@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+
+  def like(palette)
+    likes_palettes << palette
+  end
 end
