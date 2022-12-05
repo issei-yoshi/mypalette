@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def like(palette)
     likes_palettes << palette
   end
+
+  def unlike(palette)
+    likes_palettes.destroy(palette)
+  end
 end
