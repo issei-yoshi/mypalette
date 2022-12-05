@@ -1,4 +1,4 @@
-<% if current_user.likes_palettes.include?(palette) %>
+<% if current_user.like?(palette) %>
   unlikebutton
 <% else %>
   likebutton

@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def unlike(palette)
     likes_palettes.destroy(palette)
   end
+
+  def like?(palette)
+    likes_palettes.include?(palette)
+  end
 end
