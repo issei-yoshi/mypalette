@@ -1,5 +1,5 @@
 <% if current_user.like?(palette) %>
-  <%= link_to "スキ解除", palette_like_path(palette), method: :delete %>
+  <%= link_to "スキ解除", palette_like_path(palette_id: palette.id, id: current_user.likes.find_by(palette_id: palette.id)), method: :delete %>
 <% else %>
   <%= link_to "スキ", palette_likes_path(palette), method: :post %>
 <% end %>

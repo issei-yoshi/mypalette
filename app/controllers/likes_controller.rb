@@ -6,5 +6,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    palette = current_user.likes_palettes.find(params[:palette_id])
+    current_user.unlike(palette)
+    redirect_back fallback_location: palette_path(palette)
   end
 end
