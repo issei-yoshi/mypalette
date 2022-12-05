@@ -1,5 +1,5 @@
 <% if current_user.like?(palette) %>
-  unlikebutton
+  <%= link_to "スキ解除", palette_like_path(palette), method: :delete %>
 <% else %>
   <%= link_to "スキ", palette_likes_path(palette), method: :post %>
 <% end %>
