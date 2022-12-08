@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_08_133115) do
+ActiveRecord::Schema.define(version: 2022_12_08_133336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2022_12_08_133115) do
     t.index ["palette_id"], name: "index_likes_on_palette_id"
     t.index ["user_id", "palette_id"], name: "index_likes_on_user_id_and_palette_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "palette_tags", force: :cascade do |t|
+    t.bigint "palette_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["palette_id", "tag_id"], name: "index_palette_tags_on_palette_id_and_tag_id", unique: true
+    t.index ["palette_id"], name: "index_palette_tags_on_palette_id"
+    t.index ["tag_id"], name: "index_palette_tags_on_tag_id"
   end
 
   create_table "palettes", force: :cascade do |t|
@@ -60,5 +70,7 @@ ActiveRecord::Schema.define(version: 2022_12_08_133115) do
 
   add_foreign_key "likes", "palettes"
   add_foreign_key "likes", "users"
+  add_foreign_key "palette_tags", "palettes"
+  add_foreign_key "palette_tags", "tags"
   add_foreign_key "palettes", "users"
 end
