@@ -27,10 +27,6 @@ class PalettesController < ApplicationController
     redirect_to new_palette_path
   end
 
-  def likes
-    @palettes = current_user.likes_palettes
-  end
-
   private
 
   def palette_params
