@@ -2,6 +2,13 @@ class PalettesController < ApplicationController
   skip_before_action :require_login, only: %i[new]
 
   def index
+    palettes = if(tag_name = params[:tag_name])
+      Post.with_tag(tag_name)
+    else
+      Post.all
+    end
+
+    @palettes = palettes.order(created_at: :desc)
   end
 
   def new
