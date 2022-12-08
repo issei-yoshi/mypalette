@@ -1,6 +1,9 @@
 class PalettesController < ApplicationController
   skip_before_action :require_login, only: %i[new]
 
+  def index
+  end
+
   def new
     @palette = Palette.new
   end

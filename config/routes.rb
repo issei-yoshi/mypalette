@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :palettes, only: [:new, :create, :show, :destroy] do
+  resources :palettes, only: [:index, :new, :create, :show, :destroy] do
     resources :likes, only: [:create, :destroy]
   end
 
