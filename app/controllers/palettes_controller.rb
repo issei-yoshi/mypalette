@@ -30,6 +30,6 @@ class PalettesController < ApplicationController
   private
 
   def palette_params
-    params.require(:palette).permit(:main, :sub, :body)
+    params.require(:palette).permit(:main, :sub, :body, tag_ids: [])
   end
 end
