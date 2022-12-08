@@ -8,7 +8,7 @@ class PalettesController < ApplicationController
       Palette.all
     end
 
-    @palettes = palettes.order(created_at: :desc)
+    @palettes = palettes.includes([:tags, :user, :likes]).order(created_at: :desc)
     render layout: 'layouts/colorless'
   end
 
