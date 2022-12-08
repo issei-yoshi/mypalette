@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :palettes, only: [:new, :create, :show, :destroy]
+  resources :palettes, only: [:new, :create, :show, :destroy] do
+    resources :likes, only: [:create, :destroy]
+  end
 
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
     get 'colors' => 'colors#index'
+    get "palettes/likes" => "colors#likes"
   end
 
   get 'login', to: 'user_sessions#new'

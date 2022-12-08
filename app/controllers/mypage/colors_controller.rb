@@ -4,4 +4,9 @@ class Mypage::ColorsController < ApplicationController
   def index
     @palettes = current_user.palettes
   end
+
+  def likes
+    @palettes = current_user.likes_palettes.includes([:user, :likes])
+  end
+
 end
