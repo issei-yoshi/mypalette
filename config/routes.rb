@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :palettes, only: [:new, :create, :show, :destroy] do
     resources :likes, only: [:create, :destroy]
+    collection do
+      get :likes
+    end
   end
 
   namespace :mypage do
