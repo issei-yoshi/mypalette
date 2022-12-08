@@ -1,0 +1,8 @@
+<div class="md:w-2/3">
+
+  <div class="my-5">
+    <% @palettes.each do |palette| %>
+      <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
+    <% end %>
+  </div>
+</div>
