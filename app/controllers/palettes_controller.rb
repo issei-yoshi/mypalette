@@ -9,6 +9,7 @@ class PalettesController < ApplicationController
     end
 
     @palettes = palettes.order(created_at: :desc)
+    render layout: 'layouts/colorless'
   end
 
   def new
