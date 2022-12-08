@@ -32,6 +32,6 @@ class User < ApplicationRecord
   end
 
   def like?(palette)
-    likes_palettes.include?(palette)
+    palette.likes.pluck(:user_id).include?(id)
   end
 end
