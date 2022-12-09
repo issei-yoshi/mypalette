@@ -20,9 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const blue = rgbVal.substr( 4, 2 );
       const brightness = Math.floor((parseInt(red, 16) * 0.299) + (parseInt(green, 16) * 0.587) + (parseInt(blue, 16) * 0.114))
       const textColor = brightness >= 140 ? '#000000' : '#FFFFFF'
-      console.log(textColor);
+      // console.log(textColor);
 
       el.style.color = textColor;
     })
   });
+
+  main.addEventListener('input', function(e){
+    let colorValue = e.target.value
+    const bgChange = document.querySelector('#bg-change-id');
+
+    console.log(colorValue)
+    if (colorValue == "#000000"){
+      console.log('黒だよ');
+      bgChange.setAttribute('class', 'bg-black');
+    } else if(colorValue == "#ffffff") {
+      console.log('白だよ');
+      bgChange.setAttribute('class', 'bg-change');
+    }
+  })
 })
