@@ -8,11 +8,11 @@
 Tag.create([
   { name: 'Red' },
   { name: 'Blue' },
-  { name: 'Yellow' },
   { name: 'Green' },
-  { name: 'Orange' },
-  { name: 'Pink' },
+  { name: 'Yellow' },
   { name: 'Purple' },
-  { name: 'White' },
-  { name: 'Black' }
+  { name: 'Orange' },
+  { name: 'Black' },
+  { name: 'Grey' },
+  { name: 'White' }
 ])
