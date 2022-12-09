@@ -1,6 +1,17 @@
 class PalettesController < ApplicationController
   skip_before_action :require_login, only: %i[new]
 
+  def index
+    palettes = if(tag_name = params[:tag_name])
+      Palette.with_tag(tag_name)
+    else
+      Palette.all
+    end
+
+    @palettes = palettes.includes([:tags, :user, :likes]).order(created_at: :desc)
+    render layout: 'layouts/colorless'
+  end
+
   def new
     @palette = Palette.new
   end
@@ -30,6 +41,6 @@ class PalettesController < ApplicationController
   private
 
   def palette_params
-    params.require(:palette).permit(:main, :sub, :body)
+    params.require(:palette).permit(:main, :sub, :body, tag_ids: [])
   end
 end

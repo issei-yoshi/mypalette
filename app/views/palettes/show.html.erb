@@ -1,4 +1,6 @@
-<%= render partial: 'shared/unablecolor', locals: {palette: @palette} %>
+<div class="md:w-2/3 my-5">
+    <%= render partial: 'shared/unablecolor', locals: {palette: @palette} %>
+</div>
 
 <%= javascript_pack_tag 'color/initial_main_change' %>
 <%= javascript_pack_tag 'color/initial_sub_change' %>

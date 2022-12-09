@@ -1,4 +1,4 @@
-<div class="flex md:justify-between my-5">
+<div class="flex md:justify-between mt-5">
 
   <div class="border border-b-2 sm:m-0 md:m-2 lg:p-4 w-1/4">
     <div class="md:flex ">
@@ -43,8 +43,16 @@
   </div>
 
 
-  <div class="my-auto">
+  <div class="my-auto w-1/4">
     <%= render partial: 'shared/button', locals: { palette: palette} %>
   </div>
 
+</div>
+
+<div>
+  <% palette.tags.each do |tag| %>
+    <span class="text-center px-1 mx-1 bg-gray-100 border text-gray-500 rounded-lg hover:text-black">
+      <%= link_to tag.name, palettes_path(tag_name: tag.name) %>
+    </span>
+  <% end %>
 </div>
