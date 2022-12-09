@@ -26,17 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   });
 
-  main.addEventListener('input', function(e){
+  main.addEventListener('change', function(e){
     let colorValue = e.target.value
     const bgChange = document.querySelector('#bg-change-id');
 
-    console.log(colorValue)
-    if (colorValue == "#000000"){
-      console.log('黒だよ');
-      bgChange.setAttribute('class', 'bg-black');
-    } else if(colorValue == "#ffffff") {
-      console.log('白だよ');
-      bgChange.setAttribute('class', 'bg-change');
+    // console.log(colorValue)
+    if (colorValue == "#ffffff"){
+      bgChange.setAttribute('class', 'img-bg-white');
+    } else if(colorValue == "#000000") {
+      bgChange.setAttribute('class', 'img-bg-black');
+    } else {
+      bgChange.setAttribute('class', 'img-bg-red');
     }
   })
 })
