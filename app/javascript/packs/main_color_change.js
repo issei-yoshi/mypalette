@@ -26,17 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   });
 
-  main.addEventListener('change', function(e){
-    let colorValue = e.target.value
-    const bgChange = document.querySelector('#bg-change-id');
+  // main.addEventListener('change', function(e){
+  //   let colorValue = e.target.value
+  //   const bgChange = document.querySelector('#bg-change-id');
 
-    // console.log(colorValue)
-    if (colorValue == "#ffffff"){
-      bgChange.setAttribute('class', 'img-bg-white');
-    } else if(colorValue == "#000000") {
-      bgChange.setAttribute('class', 'img-bg-black');
-    } else {
-      bgChange.setAttribute('class', 'img-bg-red');
-    }
-  })
+  //   // console.log(colorValue)
+  //   if (colorValue == "#ffffff"){
+  //     bgChange.setAttribute('class', 'img-bg-white');
+  //   } else if(colorValue == "#000000") {
+  //     bgChange.setAttribute('class', 'img-bg-black');
+  //   } else {
+  //     bgChange.setAttribute('class', 'img-bg-red');
+  //   }
+  // })
 })
