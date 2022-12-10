@@ -1,3 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('load');
+  const BgImage = document.querySelector('.bgimage-change');
+  const BgChange = document.querySelector('#bg-change-id');
 })
