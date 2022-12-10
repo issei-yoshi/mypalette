@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(bgImageVal)
     if (bgImageVal == "Black"){
       bgChange.setAttribute('class', 'img-bg-black');
-    } else if(bgImageVal == "White") {
-      bgChange.setAttribute('class', 'img-bg-white');
     } else if(bgImageVal == "Grey") {
       bgChange.setAttribute('class', 'img-bg-grey');
+    } else if(bgImageVal == "White") {
+      bgChange.setAttribute('class', 'img-bg-white');
     } else if(bgImageVal == "Red") {
       bgChange.setAttribute('class', 'img-bg-red');
     } else if(bgImageVal == "Blue") {
