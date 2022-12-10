@@ -44,6 +44,17 @@
       </div>
     </div>
 
+    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :bgimage, "Bg Image" %>
+        </div>
+        <div>
+          <%= f.select :bgimage, Palette.bgimages.keys.map { |k| [t("enum.palette.bgimage.#{k}"), k] }, { selected: "Black" } , class: "bgimage-change colorinput my-auto" %>
+        </div>
+      </div>
+    </div>
+
     <% if %w[root new_palette].any? {|name| current_page?(send("#{name}_path"))} %>
       <div class="text-center my-auto">
         <%= f.submit '登録', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1" %>
