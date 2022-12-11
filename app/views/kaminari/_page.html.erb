@@ -4,6 +4,6 @@
   </li>
 <% else %>
   <li class="page-item">
-    <%= link_to page, url, remote: remote, rel: page.rel, class: 'page-link' %>
+    <%= link_to page, url, remote: remote, rel: page.rel, class: 'page-link', data: { turbolinks: false } %>
   </li>
 <% end %>
