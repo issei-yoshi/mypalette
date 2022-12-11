@@ -1,4 +1,4 @@
-<div class="my-5">
+<div class="md:w-3/4 my-5 mx-auto">
   <% @palettes.each do |palette| %>
     <div>
       <%= "作成者: " %><%= palette.user.first_name %>
@@ -8,4 +8,7 @@
     </div>
     <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
   <% end %>
+  <div class="">
+    <%= paginate @palettes %>
+  </div>
 </div>

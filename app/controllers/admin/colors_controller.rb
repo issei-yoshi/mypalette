@@ -2,7 +2,7 @@ class Admin::ColorsController < Admin::BaseController
   layout 'admin/layouts/admin_colorless'
 
   def index
-    @palettes = Palette.includes(:user)
+    @palettes = Palette.includes(:user).page(params[:page])
   end
 
   def show
