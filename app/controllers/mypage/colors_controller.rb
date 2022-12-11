@@ -6,7 +6,7 @@ class Mypage::ColorsController < ApplicationController
   end
 
   def likes
-    @palettes = current_user.likes_palettes.includes([:user, :likes])
+    @palettes = current_user.likes_palettes.includes([:user, :likes]).page(params[:page])
   end
 
 end
