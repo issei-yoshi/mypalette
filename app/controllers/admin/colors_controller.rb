@@ -10,6 +10,7 @@ class Admin::ColorsController < Admin::BaseController
 
   def edit
     @palette = Palette.find(params[:id])
+    render layout: 'admin/layouts/application'
   end
 
   def update
