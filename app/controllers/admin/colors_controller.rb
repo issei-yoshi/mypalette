@@ -34,6 +34,6 @@ class Admin::ColorsController < Admin::BaseController
   private
 
   def palette_params
-    params.require(:palette).permit(:main, :sub, :body)
+    params.require(:palette).permit(:main, :sub, :body, :bgimage, tag_ids: [])
   end
 end
