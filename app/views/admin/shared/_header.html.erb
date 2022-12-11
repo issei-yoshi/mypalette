@@ -5,6 +5,12 @@
 
   <div class="hidden md:visible block flex md:flex lg:items-center lg:w-auto mr-1">
     <div>
+      <%= link_to 'All Users', admin_users_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
+    </div>
+    <div>
+      <%= link_to 'All Colors', admin_colors_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
+    </div>
+    <div>
       <%= link_to 'ログアウト', admin_logout_path, method: :delete, class:"mt-0 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white"  %>
     </div>
   </div>
