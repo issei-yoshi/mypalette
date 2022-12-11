@@ -2,4 +2,5 @@
     <% @palettes.each do |palette| %>
       <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
     <% end %>
+    <%= paginate @palettes %>
 </div>
