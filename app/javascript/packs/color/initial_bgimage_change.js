@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const bgImage = document.querySelector('.bgimage-change');
   const bgChange = document.querySelector('#bg-change-id');
-  let bgImageBack = document.querySelector('.bg-input');
 
   let bgImageVal = bgImage.value
   // console.log(bgImageVal)
