@@ -1,4 +1,4 @@
-<div>
+<div class="">
   <% @users.each do |user| %>
     <table>
       <tr>
@@ -25,4 +25,8 @@
       </tr>
     </table>
   <% end %>
+</div>
+
+<div class="">
+  <%= paginate @users %>
 </div>
