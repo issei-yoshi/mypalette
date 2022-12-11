@@ -2,12 +2,12 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="sm:flex justify-between my-5">
 
-    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
+    <div class="border border-b-2 m-2 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :main, "Main Color" %>
         </div>
-        <div>
+        <div class="my-auto">
           <%= f.color_field :main, class: "main-color colorinput my-auto", value: palette.main %>
         </div>
       </div>
@@ -16,12 +16,12 @@
       </div>
     </div>
 
-    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
+    <div class="border border-b-2 m-2 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :sub, "Sub Color" %>
         </div>
-        <div>
+        <div class="my-auto">
           <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: palette.sub %>
         </div>
       </div>
@@ -30,17 +30,26 @@
       </div>
     </div>
 
-    <div class="border border-b-2 m-2 lg:p-4 bg-gray-50 hover:bg-white">
+    <div class="border border-b-2 m-2 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :body, "Body Color" %>
         </div>
-        <div>
-          <%= f.color_field :body, class: "body-color colorinput my-auto", value: palette.body %>
+        <div class="my-auto">
+          <%= f.color_field :body, class: "body-color colorinput", value: palette.body %>
         </div>
       </div>
       <div class="text-center">
         <%= palette.body %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-2 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :bgimage, "Bg Image" %>
+        </div>
+          <%= f.select :bgimage, Palette.bgimages.keys.map { |k| [t("enum.palette.bgimage.#{k}"), k] }, { selected: "Black" } , class: "bgimage-change bg-input my-auto" %>
       </div>
     </div>
 

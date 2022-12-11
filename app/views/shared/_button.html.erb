@@ -13,12 +13,12 @@
     <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
       <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますか?" } %>
     </button>
+  <% elsif %w[mypage_palettes_likes palettes].any? {|name| current_page?(send("#{name}_path"))} %>
+    <%= render 'shared/unlike_detail_button', palette: palette %>
   <% elsif current_user&.own?(palette) %>
     <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
       <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますかshow?" } %>
     </button>
-  <% elsif %w[mypage_palettes_likes palettes].any? {|name| current_page?(send("#{name}_path"))} %>
-    <%= render 'shared/unlike_detail_button', palette: palette %>
   <% else %>
     <%= render 'shared/like_button', palette: palette %>
   <% end %>
