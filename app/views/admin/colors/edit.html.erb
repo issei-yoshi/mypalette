@@ -49,7 +49,7 @@
         <div class="px-3 my-auto w-4/6">
           <%= f.label :bgimage, "Bg Image" %>
         </div>
-          <%= f.select :bgimage, Palette.bgimages.keys.map { |k| [t("enum.palette.bgimage.#{k}"), k] }, { selected: "Black" } , class: "bgimage-change bg-input my-auto" %>
+          <%= f.select :bgimage, Palette.bgimages.keys.map { |k| [t("enum.palette.bgimage.#{k}"), k] }, { selected: @palette.bgimage } , class: "bgimage-change bg-input my-auto" %>
       </div>
       <div class="text-center">
         <%= @palette.bgimage %>
