@@ -1,7 +1,10 @@
-<div class="md:w-2/3">
+<div class="md:w-3/4 mx-auto">
   <div class="my-5">
     <% @palettes.each do |palette| %>
       <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
     <% end %>
+  </div>
+  <div class="">
+    <%= paginate @palettes %>
   </div>
 </div>
