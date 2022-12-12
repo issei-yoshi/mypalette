@@ -10,6 +10,10 @@
       <div>
         <%= link_to 'Admin Menu', admin_colors_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
       </div>
+    <% else %>
+     <div>
+        <%= link_to 'All Colors', palettes_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
+      </div>
     <% end %>
     <div>
       <%= link_to 'スキ Colors', mypage_palettes_likes_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
