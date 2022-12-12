@@ -1,13 +1,13 @@
 <%= form_with model: @palette, url: admin_color_path(@palette), local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="sm:flex justify-between my-5">
+  <div class="sm:flex justify-center my-5">
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :main, "Main Color" %>
         </div>
-        <div>
+        <div class="my-auto">
           <%= f.color_field :main, class: "main-color colorinput my-auto", value: @palette.main %>
         </div>
       </div>
@@ -16,12 +16,12 @@
       </div>
     </div>
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :sub, "Sub Color" %>
         </div>
-        <div>
+        <div  class="my-auto">
           <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: @palette.sub %>
         </div>
       </div>
@@ -30,12 +30,12 @@
       </div>
     </div>
 
-    <div class="border m-2 lg:p-4">
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
       <div class="flex ">
         <div class="px-3 my-auto w-4/6">
           <%= f.label :body, "Body Color" %>
         </div>
-        <div>
+        <div  class="my-auto">
           <%= f.color_field :body, class: "body-color colorinput my-auto", value: @palette.body %>
         </div>
       </div>
@@ -44,9 +44,35 @@
       </div>
     </div>
 
-      <div class="text-center my-auto">
-      <%= f.submit '更新', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1" %>
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :bgimage, "Bg Image" %>
+        </div>
+          <%= f.select :bgimage, Palette.bgimages.keys.map { |k| [t("enum.palette.bgimage.#{k}"), k] }, { selected: @palette.bgimage } , class: "bgimage-change bg-input my-auto" %>
       </div>
+      <div class="text-center">
+        <%= @palette.bgimage %>
+      </div>
+    </div>
 
+    <div class="text-center my-auto m-1">
+      <%= f.submit '更新', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1" %>
+    </div>
   </div>
+
+    <div class="mb-5 text-center">
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+        <%= tag.label do %>
+          <%= tag.check_box %>
+          <%= tag.text %>
+        <% end %>
+      <% end %>
+    </div>
+
 <% end %>
+
+<%= javascript_pack_tag 'color/initial_main_change' %>
+<%= javascript_pack_tag 'color/initial_sub_change' %>
+<%= javascript_pack_tag 'color/initial_body_change' %>
+<%= javascript_pack_tag 'color/initial_bgimage_change' %>

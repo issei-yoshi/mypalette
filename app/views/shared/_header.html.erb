@@ -1,9 +1,16 @@
 <nav class="flex items-center justify-between flex-wrap bg-yellow-300 p-6">
   <div class="flex items-center flex-shrink-0 text-white">
-    <span class="font-semibold text-xl tracking-tight">MyPalette</span>
+    <span class="font-semibold text-xl tracking-tight">
+      <%= link_to 'MyPalette', root_path %>
+    </span>
   </div>
 
   <div class="hidden md:visible block flex md:flex lg:items-center lg:w-auto mr-1">
+    <% if current_user.admin? %>
+      <div>
+        <%= link_to 'Admin Menu', admin_colors_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
+      </div>
+    <% end %>
     <div>
       <%= link_to 'スキ Colors', mypage_palettes_likes_path, class:"mt-0 mx-1 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-yellow-500 hover:bg-white", data: {"turbolinks" => false}  %>
     </div>

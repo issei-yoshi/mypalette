@@ -1,13 +1,13 @@
 <% if current_user.own?(palette) %>
-  <button class="bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1">
-    <%= link_to '詳細', palette_path(palette), data: {"turbolinks" => false} %>
+  <button class="text-white my-2 w-12">
+    <%= link_to '詳細', palette_path(palette), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
   </button>
-  <button class="bg-red-500 hover:bg-red-400 text-white rounded px-3 py-2">
-    <%= link_to '削除', palette_path(palette), method: :delete, data: { confirm: "削除しますかshow?" } %>
+  <button class="text-white my-2 w-12">
+    <%= link_to '削除', palette_path(palette), class:"bg-red-500 hover:bg-red-400 px-2 py-2 rounded", method: :delete, data: { confirm: "削除してもよろしいですか" } %>
   </button>
 <% elsif current_user.like?(palette) %>
-  <button class="bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1">
-      <%= link_to '詳細', palette_path(palette), data: {"turbolinks" => false} %>
+  <button class="text-white my-2 w-12">
+    <%= link_to '詳細', palette_path(palette), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
   </button>
   <button class="px-3 py-2">
     <%= link_to palette_like_path(palette_id: palette.id, id: current_user.likes.find_by(palette_id: palette.id)), method: :delete do %>
@@ -15,8 +15,8 @@
     <% end %>
   </button>
 <% else %>
-  <button class="bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1">
-      <%= link_to '詳細', palette_path(palette), data: {"turbolinks" => false} %>
+  <button class="text-white my-2 w-12">
+    <%= link_to '詳細', palette_path(palette), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
   </button>
   <button class="px-3 py-2">
     <%= link_to palette_likes_path(palette), method: :post do %>
