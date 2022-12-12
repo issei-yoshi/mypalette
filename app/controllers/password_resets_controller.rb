@@ -1,5 +1,6 @@
 class PasswordResetsController < ApplicationController
   skip_before_action :require_login
+  layout 'layouts/colorless'
 
   def new; end
 
