@@ -12,8 +12,8 @@ class Mypage::ProfilesController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      flash[:success] =  '編集しました'
-      redirect_back fallback_location:root_path
+      flash[:success] =  '編集に成功しました'
+      redirect_to mypage_profile_path
     else
       flash.now[:danger] = '編集に失敗しました'
       render :edit
