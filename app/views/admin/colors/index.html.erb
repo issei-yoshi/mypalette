@@ -1,7 +1,7 @@
 <div class="md:w-3/4 my-5 mx-auto">
   <% @palettes.each do |palette| %>
     <div>
-      <%= "作成者: " %><%= palette.user.first_name %>
+      <%= "作成者: " %><%= palette.user.name %>
     </div>
     <div>
       <%= "作成日: " %><%= palette.created_at %>

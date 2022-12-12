@@ -1,18 +1,12 @@
 <div class="w-full max-w-sm my-12">
 <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-    <div class="">
-      <div class="pt-5 pb-2">
-        <%= f.label :last_name, "姓" %>
-      </div>
-      <%= f.text_field :last_name, class: 'rounded border border-gray-200 p-1' %>
-    </div>
 
     <div class="">
       <div class="pt-5 pb-2">
-        <%= f.label :first_name, "名" %>
+        <%= f.label :name, "名前" %>
       </div>
-      <%= f.text_field :first_name, class: 'rounded border border-gray-200 p-1' %>
+      <%= f.text_field :name, class: 'rounded border border-gray-200 p-1' %>
     </div>
 
     <div class="">
