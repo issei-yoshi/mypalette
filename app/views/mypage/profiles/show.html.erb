@@ -1,33 +1,42 @@
 <div class="md:w-3/4 my-5 mx-auto">
   <%= render 'mypage/shared/activebutton' %>
 
-  <div class="mx-auto w-full max-w-sm my-12">
-    <div class="">
-      <div class="pt-5 pb-2">
-        登録日
+  <div class="my-5">
+    <div class="mx-auto w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
+          ユーザー情報
+        </h1>
+          <div class="my-7">
+            <div class="my-2">
+              登録日
+            </div>
+            <div>
+              <%= l @user.created_at, format: :short %>
+            </div>
+          </div>
+          <div class="my-7">
+            <div class="my-2">
+              名前
+            </div>
+            <div>
+              <%= @user.name %>
+            </div>
+          </div>
+          <div class="my-7">
+            <div class="my-2">
+              メールアドレス
+            </div>
+            <div>
+              <%= @user.email %>
+            </div>
+          </div>
+          <div class="my-7">
+            <button class="w-full">
+              <%= link_to '編集', edit_mypage_profile_path, class:" text-white bg-green-400 hover:bg-green-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+            </button>
+          </div>
       </div>
-      <%= l @user.created_at, format: :short %>
     </div>
-
-    <div class="">
-      <div class="pt-5 pb-2">
-        名前
-      </div>
-      <%= @user.name %>
-    </div>
-
-    <div class="">
-      <div class="pt-5 pb-2">
-        メールアドレス
-      </div>
-      <%= @user.email %>
-    </div>
-
-    <div class="mt-3">
-      <button class="bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1">
-        <%= link_to '編集', edit_mypage_profile_path %>
-      </button>
-    </div>
-
   </div>
 </div>
