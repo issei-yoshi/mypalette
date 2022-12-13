@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const bgChange = document.querySelector('#bg-change-id');
   let bgImageBack = document.querySelector('.bg-input');
 
-  bgImage.addEventListener('input', function(e){
+  bgImage.addEventListener('change', function(e){
     let bgImageVal = bgImage.value
     // console.log(bgImageVal)
     if (bgImageVal == "Black"){
