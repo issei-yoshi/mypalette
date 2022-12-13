@@ -47,6 +47,16 @@ RSpec.describe 'Users', type: :system do
         expect(page).to have_field 'メールアドレス', with: existed_user.email
       end
     end
+
+    describe 'マイページ' do
+      context '未ログイン状態' do
+        it 'マイページへのアクセスが失敗する' do
+          visit mypage_profile_path(user)
+          expect(page).to have_content('ログインしてください')
+          expect(current_path).to eq login_path
+        end
+      end
+    end
   end
 
 end
