@@ -64,6 +64,18 @@ RSpec.describe 'Palettes', type: :system do
       end
     end
 
+    describe 'ページ遷移' do
+      context '他ユーザーのパレット詳細ページにアクセス' do
+        let!(:other_user) { create(:user, email: "other_user@example.com") }
+        let!(:other_palette) { create(:palette, user: other_user) }
+
+        it 'パレット詳細閲覧に成功する' do
+          visit palette_path(other_palette)
+          expect(page).to have_css('.fa-heart')
+        end
+      end
+    end
+
   end
 
 end
