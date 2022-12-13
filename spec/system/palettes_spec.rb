@@ -20,6 +20,16 @@ RSpec.describe 'Palettes', type: :system do
         end
       end
     end
+
+    describe 'ページ遷移確認' do
+      context 'パレット詳細ページにアクセス' do
+        it 'アクセスに失敗する' do
+          visit palette_path(palette)
+          expect(page).to have_content 'ログインしてください'
+          expect(current_path).to eq login_path
+        end
+      end
+    end
   end
 
 end

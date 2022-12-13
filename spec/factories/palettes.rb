@@ -4,5 +4,6 @@ FactoryBot.define do
     sub { '#FF0000' }
     body { '#FF0000' }
     bgimage { 'Yellow' }
+    association :user
   end
 end
