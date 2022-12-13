@@ -43,4 +43,27 @@ RSpec.describe 'Palettes', type: :system do
     end
   end
 
+  describe 'ログイン後' do
+    before { login_as(user) }
+
+    describe 'パレット新規登録' do
+      context 'パレットの入力値が正常' do
+        it 'パレットの新規作成が成功する' do
+          visit root_path
+          fill_in "palette_main", with: '#ff0000'
+          fill_in "palette_sub", with: '#ff0000'
+          fill_in "palette_body", with: '#ff0000'
+          find("#palette_bgimage").find("option[value='Purple']").select_option
+          click_button '登録'
+          expect(page).to have_content 'パレットを作成しました'
+          expect(find('.main-color', visible: false).value ).to eq '#ff0000'
+          expect(find('.sub-color', visible: false).value ).to eq '#ff0000'
+          expect(find('.body-color', visible: false).value ).to eq '#ff0000'
+          expect(find('.bgimage-change', visible: false).value ).to eq 'Purple'
+        end
+      end
+    end
+
+  end
+
 end

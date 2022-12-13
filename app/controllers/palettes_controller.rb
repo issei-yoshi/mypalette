@@ -19,10 +19,10 @@ class PalettesController < ApplicationController
   def create
     @palette = current_user.palettes.new(palette_params)
     if @palette.save
-      flash[:success] = "カラー作成成功しました"
+      flash[:success] = "パレットを作成しました"
       redirect_to palette_path(@palette)
     else
-      flash.now[:danger] = "カラー作成失敗しました"
+      flash.now[:danger] = "パレット作成に失敗しました"
       render :new
     end
   end
