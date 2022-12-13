@@ -75,6 +75,17 @@ RSpec.describe 'Users', type: :system do
           expect(current_path).to eq mypage_profile_path
         end
       end
+
+      context 'メールアドレスが未入力' do
+        it 'ユーザーの編集が失敗する' do
+          visit edit_mypage_profile_path
+          fill_in '名前', with: 'UpdateName'
+          fill_in 'メールアドレス', with: ''
+          click_button '更新'
+          expect(page).to have_content('編集に失敗しました')
+          expect(current_path).to eq mypage_profile_path
+        end
+      end
     end
 
   end
