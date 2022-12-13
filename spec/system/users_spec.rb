@@ -86,6 +86,19 @@ RSpec.describe 'Users', type: :system do
           expect(current_path).to eq mypage_profile_path
         end
       end
+
+      context 'メールアドレスが既に使われている' do
+        it 'ユーザーの編集が失敗する' do
+          other_user = create(:user)
+          visit edit_mypage_profile_path
+          fill_in '名前', with: 'UpdateName'
+          fill_in 'メールアドレス', with: other_user.email
+          click_button '更新'
+          expect(page).to have_content('編集に失敗しました')
+          expect(page).to have_content('Email has already been taken')
+          expect(current_path).to eq mypage_profile_path
+        end
+      end
     end
 
   end
