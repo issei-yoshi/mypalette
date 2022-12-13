@@ -76,6 +76,17 @@ RSpec.describe 'Palettes', type: :system do
       end
     end
 
+    describe 'パレット削除' do
+      let!(:palette) { create(:palette, user: user) }
+
+        it 'パレットの削除に成功する' do
+          visit palette_path(palette)
+          click_link '削除'
+          expect(page.accept_confirm).to eq '削除してもよろしいですか'
+          expect(page).to have_content 'パレットを削除しました'
+          expect(current_path).to eq new_palette_path
+        end
+    end
   end
 
 end

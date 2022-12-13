@@ -34,7 +34,7 @@ class PalettesController < ApplicationController
   def destroy
     @palette = current_user.palettes.find(params[:id])
     @palette.destroy!
-    flash[:success] = "カラー削除成功しました"
+    flash[:success] = "パレットを削除しました"
     redirect_to new_palette_path
   end
 
