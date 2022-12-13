@@ -29,6 +29,17 @@ RSpec.describe 'Palettes', type: :system do
           expect(current_path).to eq login_path
         end
       end
+
+      context 'パレット一覧ページにアクセス' do
+        it '全てのユーザーのパレット情報が表示される' do
+          palette_list = create_list(:palette, 3)
+          visit palettes_path
+          expect(page).to have_content palette_list[0].main
+          expect(page).to have_content palette_list[1].main
+          expect(page).to have_content palette_list[2].main
+          expect(current_path).to eq palettes_path
+        end
+      end
     end
   end
 

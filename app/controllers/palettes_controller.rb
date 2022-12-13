@@ -1,5 +1,5 @@
 class PalettesController < ApplicationController
-  skip_before_action :require_login, only: %i[new]
+  skip_before_action :require_login, only: %i[new index]
 
   def index
     palettes = if(tag_name = params[:tag_name])
