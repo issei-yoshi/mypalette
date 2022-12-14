@@ -1,6 +1,6 @@
 <div class="flex my-5">
   <div class="text-center w-1/2">
-    <%= link_to "My colors", mypage_colors_path, class: "p-1 block #{active_if('mypage/colors')}" %>
+    <%= link_to "My colors", mypage_colors_path, class: "p-1 block #{active_if('mypage/colors')}", data: {"turbolinks" => false} %>
   </div>
   <div class="text-center w-1/2">
     <%= link_to "Profile", mypage_profile_path, class: "p-1 block #{active_if('mypage/profiles')}" %>
