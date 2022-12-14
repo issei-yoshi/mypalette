@@ -1,5 +1,5 @@
 class PalettesController < ApplicationController
-  skip_before_action :require_login, only: %i[new]
+  skip_before_action :require_login, only: %i[new index]
 
   def index
     palettes = if(tag_name = params[:tag_name])
@@ -19,10 +19,10 @@ class PalettesController < ApplicationController
   def create
     @palette = current_user.palettes.new(palette_params)
     if @palette.save
-      flash[:success] = "カラー作成成功しました"
+      flash[:success] = "パレットを作成しました"
       redirect_to palette_path(@palette)
     else
-      flash.now[:danger] = "カラー作成失敗しました"
+      flash.now[:danger] = "パレット作成に失敗しました"
       render :new
     end
   end
@@ -34,7 +34,7 @@ class PalettesController < ApplicationController
   def destroy
     @palette = current_user.palettes.find(params[:id])
     @palette.destroy!
-    flash[:success] = "カラー削除成功しました"
+    flash[:success] = "パレットを削除しました"
     redirect_to new_palette_path
   end
 
