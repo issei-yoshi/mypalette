@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Paletteモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { create(:user) }
     let!(:palette) { build(:palette, user_id: user.id) }
 
     context 'mainカラム' do
