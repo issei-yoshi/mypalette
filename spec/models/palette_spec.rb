@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Paletteモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
-
     let(:user) { FactoryBot.create(:user) }
     let!(:palette) { build(:palette, user_id: user.id) }
 
@@ -26,6 +25,13 @@ RSpec.describe 'Paletteモデルのテスト', type: :model do
         expect(palette.valid?).to eq false;
       end
     end
+  end
 
+  describe 'アソシエーションのテスト' do
+    context 'Usreモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Palette.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
   end
 end
