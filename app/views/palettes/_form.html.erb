@@ -55,7 +55,7 @@
 
     <% if %w[root new_palette].any? {|name| current_page?(send("#{name}_path"))} %>
       <div class="text-center my-auto m-1">
-        <%= f.submit '登録', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1 submit-button", disabled: true %>
+        <%= f.submit '登録', class: "bg-green-200 text-white rounded px-3 py-2 my-1 submit-button", disabled: true %>
       </div>
     <% end %>
 
