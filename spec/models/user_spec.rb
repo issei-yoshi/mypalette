@@ -23,4 +23,12 @@ RSpec.describe 'Userモデルのテスト', type: :model do
       end
     end
   end
+
+  describe 'アソシエーションのテスト' do
+    context 'Paletteモデルとの関係' do
+      it '1:N' do
+        expect(User.reflect_on_association(:palettes).macro).to eq :has_many
+      end
+    end
+  end
 end
