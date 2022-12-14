@@ -28,7 +28,7 @@ RSpec.describe 'Users', type: :system do
           fill_in "user_password_confirmation", with: 'password'
           click_button '登録'
           expect(page).to have_content '登録に失敗しました'
-          expect(page).to have_content "Email can't be blank"
+          expect(page).to have_content "Emailを入力してください"
           expect(current_path).to eq users_path
         end
       end
@@ -43,7 +43,7 @@ RSpec.describe 'Users', type: :system do
           fill_in "user_password_confirmation", with: 'password'
           click_button '登録'
           expect(page).to have_content '登録に失敗しました'
-          expect(page).to have_content "Email has already been taken"
+          expect(page).to have_content "Emailはすでに存在します"
           expect(current_path).to eq users_path
           expect(page).to have_field 'メールアドレス', with: existed_user.email
         end
@@ -95,7 +95,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'メールアドレス', with: other_user.email
           click_button '更新'
           expect(page).to have_content('編集に失敗しました')
-          expect(page).to have_content('Email has already been taken')
+          expect(page).to have_content('Emailはすでに存在します')
           expect(current_path).to eq mypage_profile_path
         end
       end
