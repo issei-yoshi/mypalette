@@ -13,5 +13,12 @@ RSpec.describe 'Paletteモデルのテスト', type: :model do
       end
     end
 
+    context 'subカラム' do
+      it '空欄の場合は作成できない' do
+        palette = build(:palette, sub: '')
+        expect(palette.valid?).to eq false;
+      end
+    end
+
   end
 end
