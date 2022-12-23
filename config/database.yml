@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: mypalette_production
-  username: mypalette
+  database: clc04jgyt0070bequh864045y
+  username: clc04jgys006ybequ2zwv4wit
   password: <%= ENV['MYPALETTE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
