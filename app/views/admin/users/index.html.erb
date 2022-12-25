@@ -1,27 +1,31 @@
 <div class="">
-  <% @users.each do |user| %>
-    <table>
+  <table class="table-auto">
+    <thead>
       <tr>
-        <td>
-          <%= user.id %>
-        </td>
-        <td>
-          <%= user.name %>
-        </td>
-        <td>
-          <%= user.email %>
-        </td>
-        <td>
-          <%= l user.created_at, format: :long %>
-        </td>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td><%= l user.created_at %></td>
         <td>
           <%= link_to "詳細", admin_user_path(user) %>
           <%= link_to "編集", edit_admin_user_path(user) %>
           <%= link_to "削除", admin_user_path(user), method: :delete, data: { confirm: "削除しますか?"} %>
         </td>
       </tr>
-    </table>
-  <% end %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <div class="">
