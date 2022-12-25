@@ -1,0 +1,98 @@
+<div class="w-2/3 mx-auto mb-5">
+  <%= image_tag 'top.png' %>
+</div>
+
+<div class="section w-2/3 py-3 border-b-2 mx-auto">
+  <p class="text-2xl text-center my-2">MyPaletteの使い方</p>
+  <p class="text-center">MyPaletteは自分の理想とする色の組み合わせを<br>webサイト上で確認することのできるサービスです。</p>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">1. メインカラーを変更しよう</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-72">
+      <%= image_tag 'main.png' %>
+    </div>
+
+    <div class="">
+      まずはMainColorのカラーパレットをクリックして、好きな色に変更してみましょう。
+    </div>
+  </div>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">2. サブカラーを変更しよう</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-72">
+      <%= image_tag 'sub.png' %>
+    </div>
+
+    <div class="my-auto ">
+      次にSubColorのカラーパレットをクリックして、好きな色に変更してみましょう。
+    </div>
+  </div>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">3. ボディカラーを変更しよう</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-72">
+      <%= image_tag 'body.png' %>
+    </div>
+
+    <div class="my-auto ">
+      次にBodyColorのカラーパレットをクリックして、好きな色に変更してみましょう。
+    </div>
+  </div>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">4. 背景画像カラーを変更しよう</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-72">
+      <%= image_tag 'bgimage.png' %>
+    </div>
+
+    <div class="my-auto ">
+      次にBgImageのカラーパレットをクリックして、好きな色を選択してみましょう。
+    </div>
+  </div>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">5. 矢印より下を参考に好きな色を見つけよう</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-3/6">
+      <%= image_tag 'sample.png' %>
+    </div>
+
+    <div class="my-auto ">
+      ここまでカラーパレットを変更したら矢印より下のダミーサイトの色が変わっています！<br>自分の好きな色の組み合わせを見つけましょう！
+    </div>
+  </div>
+</div>
+
+<div class="section text-center mx-auto">
+  <h2 class="text-black-500 text-2xl font-seimbold font-serif md:w-2/3 bg-gray-100 mx-auto">6. タグをつけて登録！</h2>
+
+  <div class="justify-center mt-5 mx-auto">
+    <div class="my-2 mx-auto w-3/6">
+      <%= image_tag 'tag.png' %>
+    </div>
+
+    <div class="my-auto ">
+      自分の理想の色の組み合わせが見つかったらタグをつけて登録しましょう！<br>タグをつけることで、後でタグごとに絞り込んで自分の好みの色を探しやすくすることができます！
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <button class="text-white my-2">
+    <%= link_to "ユーザー登録してPaletteを作る", new_user_path, class:"bg-yellow-400 hover:bg-yellow-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
+  </button>
+</div>
