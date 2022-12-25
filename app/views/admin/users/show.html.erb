@@ -1,21 +1,58 @@
-<table>
-  <tr>
-    <th>ID</th>
-    <td><%= @user.id %></td>
-  </tr>
-  <tr>
-    <th>名前</th>
-    <td><%= @user.name %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= @user.email %></td>
-  </tr>
-  <tr>
-    <th>登録日</th>
-    <td><%= @user.created_at %></td>
-  </tr>
-</table>
+<div class="md:w-3/4 my-5 mx-auto">
+
+  <div class="my-5">
+    <div class="mx-auto w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
+          ユーザー情報
+        </h1>
+          <div class="my-7">
+            <div class="my-2">
+              登録日
+            </div>
+            <div>
+              <%= l @user.created_at %>
+            </div>
+          </div>
+          <div class="my-7">
+            <div class="my-2">
+              名前
+            </div>
+            <div>
+              <%= @user.name %>
+            </div>
+          </div>
+          <div class="my-7">
+            <div class="my-2">
+              メールアドレス
+            </div>
+            <div>
+              <%= @user.email %>
+            </div>
+          </div>
+          <div class="my-7">
+            <div class="my-2">
+              権限
+            </div>
+            <div>
+              <%= @user.role %>
+            </div>
+          </div>
+          <div class="my-7 flex justify-between">
+            <button class="">
+              <%= link_to '戻る', admin_users_path, class:" text-white bg-blue-400 hover:bg-blue-500  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+            </button>
+            <button class="">
+              <%= link_to '編集', edit_admin_user_path(@user), class:" text-white bg-green-400 hover:bg-green-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+            </button>
+            <button class="">
+              <%= link_to '削除', admin_user_path(@user), method: :delete, data: { confirm: "削除しますか?"}, class:" text-white bg-red-500 hover:bg-red-400  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to "編集", edit_admin_user_path(@user) %>
 <%= link_to "戻る", admin_users_path %>
