@@ -34,10 +34,8 @@
   visibility: visible; /* ツールチップを表示 */
   opacity: 1; /* 不透明度を100％に */
 }
-// }
 
-// @media screen and (max-width:767px) {
-//   .tooltip{
-//     display: none;
-//   }
-// }
+.arrow-down {
+  font-size: 40px;
+  color: #C5C4C4;
+}
