@@ -61,6 +61,9 @@
 
   </div>
   <div class="mb-5 text-center">
+  <div>
+    <p>タグ<span class="tooltip"><i class="fa-solid fa-circle-question"></i><span class="description_right">カラーに合ったタグを選択してください。<br>タグごとに検索することが可能です。</span></p>
+  </div>
     <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
       <%= tag.label do %>
         <%= tag.check_box %>
