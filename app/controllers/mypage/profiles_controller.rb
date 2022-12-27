@@ -1,16 +1,14 @@
 class Mypage::ProfilesController < ApplicationController
   layout 'layouts/colorless'
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @user = User.find(current_user.id)
   end
 
   def edit
-    @user = User.find(current_user.id)
   end
 
   def update
-    @user = User.find(current_user.id)
     if @user.update(user_params)
       flash[:success] =  '編集に成功しました'
       redirect_to mypage_profile_path
