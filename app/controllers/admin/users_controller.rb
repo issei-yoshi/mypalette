@@ -1,20 +1,18 @@
 class Admin::UsersController < Admin::BaseController
   layout 'admin/layouts/admin_colorless'
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all.page(params[:page])
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "更新に成功しました"
       redirect_to admin_user_path(@user)
@@ -25,7 +23,6 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy!
     flash[:success] = "削除に成功しました"
     redirect_to admin_users_path
@@ -35,5 +32,9 @@ class Admin::UsersController < Admin::BaseController
 
   def user_params
     params.require(:user).permit(:name, :email, :role)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
