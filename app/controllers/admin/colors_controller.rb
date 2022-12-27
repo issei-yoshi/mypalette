@@ -1,5 +1,6 @@
 class Admin::ColorsController < Admin::BaseController
   layout 'admin/layouts/admin_colorless'
+  before_action :set_palette, only: [:edit, :update, :destroy]
 
   def index
     @palettes = Palette.includes(:user).page(params[:page])
@@ -9,12 +10,10 @@ class Admin::ColorsController < Admin::BaseController
   end
 
   def edit
-    @palette = Palette.find(params[:id])
     render layout: 'admin/layouts/application'
   end
 
   def update
-    @palette = Palette.find(params[:id])
     if @palette.update(palette_params)
       flash[:success] = "カラー編集に成功しました"
       redirect_to admin_colors_path
@@ -25,7 +24,6 @@ class Admin::ColorsController < Admin::BaseController
   end
 
   def destroy
-    @palette = Palette.find(params[:id])
     @palette.destroy!
     flash[:success] = "カラーを削除しました"
     redirect_to admin_colors_path
