@@ -19,3 +19,7 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: compact
 Rails/I18nLocaleTexts:
   Enabled: false
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
