@@ -23,3 +23,15 @@ Rails/I18nLocaleTexts:
 RSpec/ExampleLength:
   Exclude:
     - 'spec/**/*'
+
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/**/*'
