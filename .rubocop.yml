@@ -56,3 +56,4 @@ RSpec/DescribeClass:
 Rails/FilePath:
   Exclude:
     - 'spec/**/*'
+    - 'config/application.rb'
