@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: clc04jgyt0070bequh864045y
-  username: clc04jgys006ybequ2zwv4wit
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
   password: <%= ENV['MYPALETTE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
