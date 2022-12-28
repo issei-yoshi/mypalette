@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Palettes', type: :system do
-
+RSpec.describe 'Palettes' do
   let(:user) { create(:user) }
   let(:palette) { create(:palette) }
 
@@ -13,10 +12,10 @@ RSpec.describe 'Palettes', type: :system do
           fill_in "palette_main", with: '#FF0000'
           fill_in "palette_sub", with: '#FF0000'
           fill_in "palette_body", with: '#FF0000'
-          find("#palette_bgimage").find("option[value='Purple']").select_option
+          find_by_id('palette_bgimage').find("option[value='Purple']").select_option
           click_button '登録'
           expect(page).to have_content 'ログインしてください'
-          expect(current_path).to eq login_path
+          expect(page).to have_current_path login_path, ignore_query: true
         end
       end
     end
@@ -26,7 +25,7 @@ RSpec.describe 'Palettes', type: :system do
         it 'アクセスに失敗する' do
           visit palette_path(palette)
           expect(page).to have_content 'ログインしてください'
-          expect(current_path).to eq login_path
+          expect(page).to have_current_path login_path, ignore_query: true
         end
       end
 
@@ -37,7 +36,7 @@ RSpec.describe 'Palettes', type: :system do
           expect(page).to have_content palette_list[0].main
           expect(page).to have_content palette_list[1].main
           expect(page).to have_content palette_list[2].main
-          expect(current_path).to eq palettes_path
+          expect(page).to have_current_path palettes_path, ignore_query: true
         end
       end
     end
@@ -53,13 +52,13 @@ RSpec.describe 'Palettes', type: :system do
           fill_in "palette_main", with: '#ff0000'
           fill_in "palette_sub", with: '#ff0000'
           fill_in "palette_body", with: '#ff0000'
-          find("#palette_bgimage").find("option[value='Purple']").select_option
+          find_by_id('palette_bgimage').find("option[value='Purple']").select_option
           click_button '登録'
           expect(page).to have_content 'パレットを作成しました'
-          expect(find('.main-color', visible: false).value ).to eq '#ff0000'
-          expect(find('.sub-color', visible: false).value ).to eq '#ff0000'
-          expect(find('.body-color', visible: false).value ).to eq '#ff0000'
-          expect(find('.bgimage-change', visible: false).value ).to eq 'Purple'
+          expect(find('.main-color', visible: false).value).to eq '#ff0000'
+          expect(find('.sub-color', visible: false).value).to eq '#ff0000'
+          expect(find('.body-color', visible: false).value).to eq '#ff0000'
+          expect(find('.bgimage-change', visible: false).value).to eq 'Purple'
         end
       end
     end
@@ -77,16 +76,15 @@ RSpec.describe 'Palettes', type: :system do
     end
 
     describe 'パレット削除' do
-      let!(:palette) { create(:palette, user: user) }
+      let!(:palette) { create(:palette, user:) }
 
-        it 'パレットの削除に成功する' do
-          visit palette_path(palette)
-          click_link '削除'
-          expect(page.accept_confirm).to eq '削除してもよろしいですか'
-          expect(page).to have_content 'パレットを削除しました'
-          expect(current_path).to eq new_palette_path
-        end
+      it 'パレットの削除に成功する' do
+        visit palette_path(palette)
+        click_link '削除'
+        expect(page.accept_confirm).to eq '削除してもよろしいですか'
+        expect(page).to have_content 'パレットを削除しました'
+        expect(page).to have_current_path new_palette_path, ignore_query: true
+      end
     end
   end
-
 end
