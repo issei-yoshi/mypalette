@@ -1,8 +1,8 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :require_login, only: [:new, :create]
   layout 'layouts/colorless'
 
-  def new ; end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])
@@ -20,5 +20,4 @@ class UserSessionsController < ApplicationController
     flash[:success] = "ログアウトしました"
     redirect_to root_path
   end
-
 end
