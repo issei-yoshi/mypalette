@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # binding.pry
     if @user.save
       flash[:success] =  '登録が完了しました'
       redirect_to root_path
