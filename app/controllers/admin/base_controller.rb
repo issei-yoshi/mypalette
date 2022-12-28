@@ -5,9 +5,9 @@ class Admin::BaseController < ApplicationController
   private
 
   def check_admin
-    unless current_user&.admin?
-      flash[:danger] = '権限がありません'
-      redirect_to root_path
-    end
+    return if current_user&.admin?
+
+    flash[:danger] = '権限がありません'
+    redirect_to root_path
   end
 end

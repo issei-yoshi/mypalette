@@ -1,15 +1,19 @@
 class PalettesController < ApplicationController
-  skip_before_action :require_login, only: %i[new index]
+  skip_before_action :require_login, only: [:new, :index]
 
   def index
-    palettes = if(tag_name = params[:tag_name])
-      Palette.with_tag(tag_name)
-    else
-      Palette.all
-    end
+    palettes = if (tag_name = params[:tag_name])
+                 Palette.with_tag(tag_name)
+               else
+                 Palette.all
+               end
 
     @palettes = palettes.includes([:tags, :user, :likes]).order(created_at: :desc).page(params[:page])
     render layout: 'layouts/colorless'
+  end
+
+  def show
+    @palette = Palette.find(params[:id])
   end
 
   def new
@@ -25,10 +29,6 @@ class PalettesController < ApplicationController
       flash.now[:danger] = "パレット作成に失敗しました"
       render :new
     end
-  end
-
-  def show
-    @palette = Palette.find(params[:id])
   end
 
   def destroy

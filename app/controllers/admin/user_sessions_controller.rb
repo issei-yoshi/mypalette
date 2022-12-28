@@ -1,7 +1,7 @@
 class Admin::UserSessionsController < Admin::BaseController
   layout 'admin/layouts/admin_login'
-  skip_before_action :check_admin, only: %i[new create]
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :check_admin, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create]
 
   def new; end
 
@@ -21,5 +21,4 @@ class Admin::UserSessionsController < Admin::BaseController
     flash[:success] = "adminログアウト成功"
     redirect_to root_path
   end
-
 end

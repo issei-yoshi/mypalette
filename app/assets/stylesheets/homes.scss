@@ -2,37 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// @media screen and (min-width:768px) {
-.tooltip { /* 補足説明するテキストのスタイル */
+.tooltip {
   position: relative;
   cursor: pointer;
   padding: 0 5px;
   color: #000000;
 }
 
-.description_right { /* ツールチップのスタイル */
+.description_right {
   width: 250px;
   position: absolute;
   transform: translateY(-50%);
   padding: 8px;
-  border-radius: 10px; /* 角の丸み */
+  border-radius: 10px;
   background: rgba(51,51,51,.6);
   font-size: 0.7em;
   left: -500%;
   bottom: 0%;
   color: #fff;
   text-align: center;
-  visibility: hidden; /* ツールチップを非表示に */
-  opacity: 0; /* 不透明度を0％に */
+  visibility: hidden;
+  opacity: 0;
   z-index: 1;
-  transition: 0.5s all; /* マウスオーバー時のアニメーション速度 */
+  transition: 0.5s all;
 }
 
-.tooltip:hover .description_right { /* マウスオーバー時のスタイル */
-  left: -500%; /* X軸の位置 */
+.tooltip:hover .description_right {
+  left: -500%;
   bottom: 0%;
-  visibility: visible; /* ツールチップを表示 */
-  opacity: 1; /* 不透明度を100％に */
+  visibility: visible;
+  opacity: 1;
 }
 
 .arrow-down {

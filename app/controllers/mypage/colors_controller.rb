@@ -8,5 +8,4 @@ class Mypage::ColorsController < ApplicationController
   def likes
     @palettes = current_user.likes_palettes.includes([:user, :likes, :tags]).page(params[:page])
   end
-
 end

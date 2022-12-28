@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
-
+RSpec.describe 'Users' do
   let(:user) { create(:user) }
 
   describe 'ログイン前' do
@@ -15,7 +14,7 @@ RSpec.describe 'Users', type: :system do
           fill_in "user_password_confirmation", with: 'password'
           click_button '登録'
           expect(page).to have_content '登録が完了しました'
-          expect(current_path).to eq root_path
+          expect(page).to have_current_path root_path, ignore_query: true
         end
       end
 
@@ -29,7 +28,7 @@ RSpec.describe 'Users', type: :system do
           click_button '登録'
           expect(page).to have_content '登録に失敗しました'
           expect(page).to have_content "Emailを入力してください"
-          expect(current_path).to eq users_path
+          expect(page).to have_current_path users_path, ignore_query: true
         end
       end
 
@@ -44,7 +43,7 @@ RSpec.describe 'Users', type: :system do
           click_button '登録'
           expect(page).to have_content '登録に失敗しました'
           expect(page).to have_content "Emailはすでに存在します"
-          expect(current_path).to eq users_path
+          expect(page).to have_current_path users_path, ignore_query: true
           expect(page).to have_field 'メールアドレス', with: existed_user.email
         end
       end
@@ -54,7 +53,7 @@ RSpec.describe 'Users', type: :system do
           it 'マイページへのアクセスが失敗する' do
             visit mypage_profile_path(user)
             expect(page).to have_content('ログインしてください')
-            expect(current_path).to eq login_path
+            expect(page).to have_current_path login_path, ignore_query: true
           end
         end
       end
@@ -72,7 +71,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'メールアドレス', with: 'update@example.com'
           click_button '更新'
           expect(page).to have_content('編集に成功しました')
-          expect(current_path).to eq mypage_profile_path
+          expect(page).to have_current_path mypage_profile_path, ignore_query: true
         end
       end
 
@@ -83,7 +82,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'メールアドレス', with: ''
           click_button '更新'
           expect(page).to have_content('編集に失敗しました')
-          expect(current_path).to eq mypage_profile_path
+          expect(page).to have_current_path mypage_profile_path, ignore_query: true
         end
       end
 
@@ -96,11 +95,9 @@ RSpec.describe 'Users', type: :system do
           click_button '更新'
           expect(page).to have_content('編集に失敗しました')
           expect(page).to have_content('Emailはすでに存在します')
-          expect(current_path).to eq mypage_profile_path
+          expect(page).to have_current_path mypage_profile_path, ignore_query: true
         end
       end
     end
-
   end
-
 end

@@ -6,8 +6,7 @@ class Admin::ColorsController < Admin::BaseController
     @palettes = Palette.includes(:user).page(params[:page])
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     render layout: 'admin/layouts/application'

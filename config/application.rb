@@ -41,10 +41,10 @@ module Mypalette
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.generators do |g|
-      g.skip_routes false #ルーティングを生成しない
-      g.assets false #assetsを生成しない
-      g.helper false #helperを生成しない
-      g.test_framework false #testファイルを生成しない
+      g.skip_routes false
+      g.assets false
+      g.helper false
+      g.test_framework false
     end
   end
 end

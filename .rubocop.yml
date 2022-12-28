@@ -1,9 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
 require:
-  - rubocop-performance # 拡張機能
-  - rubocop-rails # 拡張機能
-  - rubocop-rspec # 拡張機能
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -12,3 +12,55 @@ AllCops:
     - 'db/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+    - 'app/controllers/password_resets_controller.rb'
+
+Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/LetSetup:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/FilePath:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/application.rb'
+    - 'config/environments/development.rb'
+
+Metrics/BlockLength:
+  Enabled: false
