@@ -12,3 +12,6 @@ AllCops:
     - 'db/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+
+Documentation:
+  Enabled: false
