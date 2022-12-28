@@ -12,6 +12,7 @@ AllCops:
     - 'db/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+    - 'app/controllers/password_resets_controller.rb'
 
 Documentation:
   Enabled: false
