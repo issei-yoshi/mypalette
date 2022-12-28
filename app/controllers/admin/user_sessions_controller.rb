@@ -21,5 +21,4 @@ class Admin::UserSessionsController < Admin::BaseController
     flash[:success] = "adminログアウト成功"
     redirect_to root_path
   end
-
 end
