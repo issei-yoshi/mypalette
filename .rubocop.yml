@@ -26,6 +26,9 @@ Rails/I18nLocaleTexts:
 Style/GuardClause:
   Enabled: false
 
+Style/IfUnlessModifier:
+  Enabled: false
+
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 
@@ -57,3 +60,7 @@ Rails/FilePath:
   Exclude:
     - 'spec/**/*'
     - 'config/application.rb'
+    - 'config/environments/development.rb'
+
+Metrics/BlockLength:
+  Enabled: false
