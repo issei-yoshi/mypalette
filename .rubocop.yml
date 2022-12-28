@@ -35,3 +35,15 @@ RSpec/MultipleExpectations:
 RSpec/ContextWording:
   Exclude:
     - 'spec/**/*'
+
+RSpec/LetSetup:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/FilePath:
+  Exclude:
+    - 'spec/**/*'
