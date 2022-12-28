@@ -26,6 +26,9 @@ Rails/I18nLocaleTexts:
 Style/GuardClause:
   Enabled: false
 
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
 RSpec/ExampleLength:
   Exclude:
     - 'spec/**/*'
