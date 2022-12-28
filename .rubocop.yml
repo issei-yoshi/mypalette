@@ -15,9 +15,14 @@ AllCops:
 
 Documentation:
   Enabled: false
+
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+
 Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/GuardClause:
   Enabled: false
 
 RSpec/ExampleLength:
