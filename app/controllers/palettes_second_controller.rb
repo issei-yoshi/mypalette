@@ -1,4 +1,6 @@
 class PalettesSecondController < ApplicationController
+  skip_before_action :require_login, only: [:new, :index]
+
   def index
   end
 
