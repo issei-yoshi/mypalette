@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  #追加
+  resources :palettes2, only: [:index, :new, :create, :show, :destroy]
+
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
     get 'colors' => 'colors#index'
