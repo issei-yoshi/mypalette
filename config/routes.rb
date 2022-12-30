@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
     get 'palettes' => 'colors#palettes'
+    get 'palette_seconds' => 'colors#palette_seconds'
     get "palettes/likes" => "colors#likes"
   end
 

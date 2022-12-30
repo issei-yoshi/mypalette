@@ -1,0 +1,12 @@
+<div class="md:w-3/4 mx-auto">
+  <%= render 'mypage/shared/activebutton' %>
+
+  <div class="my-5">
+    <% @palette_seconds.each do |palette_second| %>
+      <%= render partial: 'shared/unablecolor2', locals: {palette_second: palette_second} %>
+    <% end %>
+  </div>
+  <div class="">
+    <%= paginate @palette_seconds %>
+  </div>
+</div>
