@@ -2,7 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :palettes, dependent: :destroy
-  has_many :palette_seconds, dependent: :destoy
+  has_many :palette_seconds, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :likes_palettes, through: :likes, source: :palette
 
