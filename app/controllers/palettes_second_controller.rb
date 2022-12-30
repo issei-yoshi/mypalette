@@ -9,6 +9,7 @@ class PalettesSecondController < ApplicationController
   end
 
   def new
+    @palette_second = PaletteSecond.new
   end
 
   def create
