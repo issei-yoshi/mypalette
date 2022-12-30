@@ -1,6 +1,5 @@
+<%= render 'mypage/shared/activebutton' %>
 <div class="md:w-3/4 mx-auto">
-  <%= render 'mypage/shared/activebutton' %>
-
   <div class="my-5">
     <% @palettes.each do |palette| %>
       <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
