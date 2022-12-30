@@ -13,9 +13,22 @@ class PaletteSecondsController < ApplicationController
   end
 
   def create
-    @palette_second = PaletteSecond.new
+    @palette_second = current_user.palette_seconds.new(palette_second_params)
+    if @palette_second.save
+      flash[:success] = "パレットを作成しました"
+      redirect_to palette_seconds_path(@palette_second)
+    else
+      flash.now[:danger] = "パレット作成に失敗しました"
+      render :new
+    end
   end
 
   def destroy
+  end
+
+  private
+
+  def palette_second_params
+    params.require(:palette_second).permit(:main, :sub, :body, :bg)
   end
 end
