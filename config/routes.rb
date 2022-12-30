@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
-    get 'colors' => 'colors#index'
+    get 'palettes' => 'colors#palettes'
     get "palettes/likes" => "colors#likes"
   end
 

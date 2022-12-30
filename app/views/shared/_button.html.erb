@@ -6,7 +6,7 @@
     <button class="text-white my-2 w-12">
       <%= link_to "削除", admin_color_path(palette), class:"bg-red-500 hover:bg-red-400 px-2 py-2 rounded", method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
     </button>
-  <% elsif current_page?(mypage_colors_path) %>
+  <% elsif current_page?(mypage_palettes_path) %>
     <button class="text-white my-2 w-12">
       <%= link_to '詳細', palette_path(palette), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
     </button>

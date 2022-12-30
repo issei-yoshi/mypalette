@@ -1,7 +1,7 @@
 class Mypage::ColorsController < ApplicationController
   layout 'layouts/colorless'
 
-  def index
+  def palettes
     @palettes = current_user.palettes.includes(:tags).page(params[:page])
   end
 
