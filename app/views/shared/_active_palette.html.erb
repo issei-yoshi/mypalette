@@ -1,8 +1,17 @@
 <div class="flex my-5">
-  <div class="text-center w-1/2">
-    <%= link_to "Web Site Look", new_palette_path, class: "p-1 block #{active_if('palettes')}", data: {"turbolinks" => false} %>
-  </div>
-  <div class="text-center w-1/2">
-    <%= link_to "Web App Look", new_palette_second_path, class: "p-1 block #{active_if('palette_seconds')}", data: {"turbolinks" => false} %>
-  </div>
+  <% if %w[new_palette new_palette_second].any? {|name| current_page?(send("#{name}_path"))} %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", new_palette_path, class: "p-1 block #{active_if('palettes')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", new_palette_second_path, class: "p-1 block #{active_if('palette_seconds')}", data: {"turbolinks" => false} %>
+    </div>
+  <% elsif %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", palettes_path, class: "p-1 block #{active_if('palettes')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", palette_seconds_path, class: "p-1 block #{active_if('palette_seconds')}", data: {"turbolinks" => false} %>
+    </div>
+  <% end %>
 </div>
