@@ -1,4 +1,4 @@
-class PalettesSecondController < ApplicationController
+class PaletteSecondsController < ApplicationController
   skip_before_action :require_login, only: [:new, :index]
   layout 'layouts/palettes_second' #暫定対応
 
@@ -13,6 +13,7 @@ class PalettesSecondController < ApplicationController
   end
 
   def create
+    @palette_second = PaletteSecond.new
   end
 
   def destroy

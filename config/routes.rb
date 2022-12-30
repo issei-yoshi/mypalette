@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   #追加
-  resources :palettes_second, only: [:index, :new, :create, :show, :destroy]
+  resources :palette_seconds, only: [:index, :new, :create, :show, :destroy]
 
   namespace :mypage do
     resource :profile, only: [:edit, :show, :update]
