@@ -3,6 +3,8 @@ class PaletteSecondsController < ApplicationController
   layout 'layouts/palette_seconds' #暫定対応
 
   def index
+    @palette_seconds = PaletteSecond.includes(:user).page(params[:page])
+    render layout: 'layouts/colorless'
   end
 
   def show
