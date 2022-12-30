@@ -6,6 +6,7 @@ class PaletteSecondsController < ApplicationController
   end
 
   def show
+    @palette_second = PaletteSecond.find(params[:id])
   end
 
   def new
