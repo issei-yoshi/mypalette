@@ -1,0 +1,2 @@
+class PaletteSecond < ApplicationRecord
+end
