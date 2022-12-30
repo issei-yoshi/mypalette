@@ -25,6 +25,10 @@ class PaletteSecondsController < ApplicationController
   end
 
   def destroy
+    @palette_second = current_user.palette_seconds.find(params[:id])
+    @palette_second.destroy!
+    flash[:success] = "パレットを削除しました"
+    redirect_to new_palette_second_path
   end
 
   private
