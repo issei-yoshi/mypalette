@@ -5,11 +5,22 @@
   <button class="text-white my-2 w-12">
     <%= link_to '削除', palette_second_path(palette_second), class:"bg-red-500 hover:bg-red-400 px-2 py-2 rounded", method: :delete, data: { confirm: "削除してもよろしいですか" } %>
   </button>
+<% elsif current_user&.like_second?(palette_second) %>
+  <button class="text-white my-2 w-12">
+    <%= link_to '詳細', palette_second_path(palette_second), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
+  </button>
+  <button class="px-3 py-2">
+    <%= link_to palette_second_like_second_path(palette_second_id: palette_second.id, id: current_user.like_seconds.find_by(palette__secondid: palette_second.id)), method: :delete do %>
+      <i class="fa-solid fa-heart red-heart"></i>
+    <% end %>
+  </button>
 <% else %>
   <button class="text-white my-2 w-12">
     <%= link_to '詳細', palette_second_path(palette_second), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
   </button>
   <button class="px-3 py-2">
-    いいね実装予定
+    <%= link_to palette_second_like_seconds_path(palette_second), method: :post do %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
   </button>
 <% end %>
