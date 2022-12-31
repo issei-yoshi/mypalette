@@ -18,4 +18,5 @@ import "./sub_color_change"
 import "./body_color_change"
 import "./bgimage_color_change"
 import "./bg_color_change"
+import "./dropdown"
 import '@fortawesome/fontawesome-free/js/all'
