@@ -1,0 +1,2 @@
+class LikeSecond < ApplicationRecord
+end
