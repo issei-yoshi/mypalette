@@ -6,6 +6,6 @@
       <%= link_to '削除', palette_second_path(palette_second),class:"bg-red-500 hover:bg-red-400 px-2 py-2 rounded", method: :delete, data: { confirm: "削除してもよろしいですか" } %>
     </button>
   <% else %>
-    該当なし
+    <%= render 'shared/like_button2', palette_second: palette_second %>
   <% end %>
 </div>
