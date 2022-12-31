@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_30_124445) do
+ActiveRecord::Schema.define(version: 2022_12_31_023526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "like_seconds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "palette_second_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["palette_second_id"], name: "index_like_seconds_on_palette_second_id"
+    t.index ["user_id", "palette_second_id"], name: "index_like_seconds_on_user_id_and_palette_second_id", unique: true
+    t.index ["user_id"], name: "index_like_seconds_on_user_id"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -79,6 +89,8 @@ ActiveRecord::Schema.define(version: 2022_12_30_124445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "like_seconds", "palette_seconds"
+  add_foreign_key "like_seconds", "users"
   add_foreign_key "likes", "palettes"
   add_foreign_key "likes", "users"
   add_foreign_key "palette_seconds", "users"
