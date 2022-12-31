@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :palette_seconds, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :likes_palettes, through: :likes, source: :palette
+  has_many :like_seconds, dependent: :destroy
+  has_many :like_seconds_palettes, through: :like_seconds, source: :palette_second
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
