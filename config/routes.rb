@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'palettes' => 'colors#palettes'
     get 'palette_seconds' => 'color_seconds#palette_seconds'
     get "palettes/likes" => "colors#likes"
+    get "palette_seconds/likes" => "color_seconds#likes"
   end
 
   get 'login', to: 'user_sessions#new'
