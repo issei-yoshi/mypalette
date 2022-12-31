@@ -33,7 +33,19 @@ class User < ApplicationRecord
     likes_palettes.destroy(palette)
   end
 
-  def like?(palette)
-    palette.likes.pluck(:user_id).include?(id)
+  def like_second?(palette_second)
+    palette_second.like_seconds.pluck(:user_id).include?(id)
+  end
+
+  def like_second(palette_second)
+    like_seconds_palette_seconds << palette_second
+  end
+
+  def unlike_second(palette_second)
+    like_seconds_palette_seconds.destroy(palette_second)
+  end
+
+  def like_second?(palette_second)
+    palette_second.like_seconds.pluck(:user_id).include?(id)
   end
 end
