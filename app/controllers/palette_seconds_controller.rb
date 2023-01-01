@@ -9,7 +9,7 @@ class PaletteSecondsController < ApplicationController
                         PaletteSecond.all
                       end
 
-    @palette_seconds = palette_seconds.includes([:tag_seconds, :user, :like_seconds]).page(params[:page])
+    @palette_seconds = palette_seconds.includes([:tag_seconds, :user, :like_seconds]).order(created_at: :desc).page(params[:page])
     render layout: 'layouts/colorless'
   end
 
