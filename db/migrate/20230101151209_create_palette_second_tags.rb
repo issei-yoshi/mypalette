@@ -6,7 +6,5 @@ class CreatePaletteSecondTags < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-
-    add_index :palette_second_tags, [:palette_second_id, :tag_second_id], unique: true
   end
 end
