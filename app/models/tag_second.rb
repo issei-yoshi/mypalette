@@ -1,0 +1,2 @@
+class TagSecond < ApplicationRecord
+end
