@@ -1,0 +1,2 @@
+class PaletteSecondTag < ApplicationRecord
+end
