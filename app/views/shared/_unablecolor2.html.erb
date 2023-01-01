@@ -65,7 +65,7 @@
 <div class="text-center my-3">
   <% palette_second.tag_seconds.each do |tag| %>
     <span class="text-center px-1 mx-1 bg-gray-100 border text-gray-500 rounded-lg hover:text-black">
-      <%= link_to tag.name, palette_seconds_path(tag_name: tag.name), data: { turbolinks: false } %>
+      <%= link_to tag.name, palette_seconds_path(tag_second_name: tag.name), data: { turbolinks: false } %>
     </span>
   <% end %>
 </div>

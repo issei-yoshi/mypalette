@@ -3,7 +3,13 @@ class PaletteSecondsController < ApplicationController
   layout 'layouts/palette_seconds' #暫定対応
 
   def index
-    @palette_seconds = PaletteSecond.includes(:user).page(params[:page])
+    palette_seconds = if (tag_second_name = params[:tag_second_name])
+                        PaletteSecond.with_tag(tag_second_name)
+                      else
+                        PaletteSecond.all
+                      end
+
+    @palette_seconds = palette_seconds.includes([:tag_seconds, :user, :like_seconds]).page(params[:page])
     render layout: 'layouts/colorless'
   end
 
