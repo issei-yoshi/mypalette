@@ -17,6 +17,18 @@
 #   { name: 'Orange' }
 # ])
 
+TagSecond.create([
+  { name: 'Black' },
+  { name: 'Grey' },
+  { name: 'White' },
+  { name: 'Red' },
+  { name: 'Blue' },
+  { name: 'Green' },
+  { name: 'Yellow' },
+  { name: 'Purple' },
+  { name: 'Orange' }
+])
+
 # User.create(
 #   name: 'issei',
 #   email: Rails.application.credentials.admin_user[:email],
