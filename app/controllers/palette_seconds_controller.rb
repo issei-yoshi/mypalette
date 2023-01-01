@@ -36,6 +36,6 @@ class PaletteSecondsController < ApplicationController
   private
 
   def palette_second_params
-    params.require(:palette_second).permit(:main, :sub, :body, :bg)
+    params.require(:palette_second).permit(:main, :sub, :body, :bg, tag_second_ids: [])
   end
 end
