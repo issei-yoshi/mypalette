@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root "palettes#new"
   get "about" => "homes#about"
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
-  #追加
   resources :palette_seconds, only: [:index, :new, :create, :show, :destroy] do
     resources :like_seconds, only: [:create, :destroy]
   end
@@ -31,7 +29,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   namespace :admin do
-    # root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
