@@ -1,0 +1,73 @@
+<div class="sm:flex justify-center mt-5 mx-auto">
+
+  <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+    <div class="flex ">
+      <div class="px-3 my-auto w-4/6">
+        Main Color
+      </div>
+      <div class="my-auto">
+        <input type="color" class="main-color colorinput my-auto" value=<%= palette_second.main %> disabled='true' %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= palette_second.main %>
+    </div>
+  </div>
+
+  <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+    <div class="flex ">
+      <div class="px-3 my-auto w-4/6">
+        Sub Color
+      </div>
+      <div class="my-auto">
+        <input type="color" class="sub-color colorinput my-auto" value=<%= palette_second.sub %> disabled='true' %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= palette_second.sub %>
+    </div>
+  </div>
+
+  <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+    <div class="flex ">
+      <div class="px-3 my-auto w-4/6">
+        Body Color
+      </div>
+      <div class="my-auto">
+        <input type="color" class="body-color colorinput my-auto" value=<%= palette_second.body %> disabled='true' %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= palette_second.body %>
+    </div>
+  </div>
+
+  <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+    <div class="flex ">
+      <div class="px-3 my-auto w-4/6">
+        Bg Color
+      </div>
+      <div class="my-auto">
+        <input type="color" class="bg-color colorinput my-auto" value=<%= palette_second.bg %> disabled='true' %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= palette_second.bg %>
+    </div>
+  </div>
+
+  <div class="text-center my-auto m-1">
+    <%= render partial: 'shared/button2', locals: { palette_second: palette_second} %>
+  </div>
+
+</div>
+
+<div class="text-center my-3">
+  <% palette_second.tag_seconds.each do |tag| %>
+    <span class="text-center px-1 mx-1 bg-gray-100 border text-gray-500 rounded-lg hover:text-black">
+      <%= link_to tag.name, palette_seconds_path(tag_second_name: tag.name), data: { turbolinks: false } %>
+    </span>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag 'color/unablecolor_change' %>

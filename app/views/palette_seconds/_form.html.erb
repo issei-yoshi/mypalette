@@ -1,0 +1,79 @@
+<%= form_with model: palette_second, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="sm:flex justify-center my-5">
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :main, "Main Color" %>
+        </div>
+        <div class="my-auto">
+          <%= f.color_field :main, class: "main-color colorinput my-auto", value: palette_second.main %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= palette_second.main %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :sub, "Sub Color" %>
+        </div>
+        <div class="my-auto">
+          <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: palette_second.sub %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= palette_second.sub %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :body, "Body Color" %>
+        </div>
+        <div class="my-auto">
+          <%= f.color_field :body, class: "body-color colorinput", value: palette_second.body %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= palette_second.body %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :bg, "Bg Color" %>
+        </div>
+        <div class="my-auto">
+          <%= f.color_field :bg, class: "bg-color colorinput", value: palette_second.bg %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= palette_second.bg %>
+      </div>
+    </div>
+
+      <div class="text-center my-auto m-1">
+        <%= f.submit '登録', class: "bg-green-200 text-white rounded px-3 py-2 my-1 submit-button", disabled: true %>
+      </div>
+
+  </div>
+  <div class="mb-5 text-center">
+  <div>
+    <p>タグ<span class="tooltip"><i class="fa-solid fa-circle-question"></i><span class="description_right">カラーに合ったタグを選択してください。<br>タグごとに検索することが可能です。</span></p>
+  </div>
+    <%= f.collection_check_boxes(:tag_second_ids, TagSecond.all, :id, :name) do |tag| %>
+      <%= tag.label do %>
+        <%= tag.check_box %>
+        <%= tag.text %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= javascript_pack_tag 'disable_to_able_button2' %>

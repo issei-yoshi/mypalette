@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/ga' %>
+    <title>Mypalette</title>
+    <link href="<%= image_path("favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% if logged_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/before_login_header' %>
+  <% end %>
+
+  <%= render 'shared/flash_message' %>
+    <div class="container mx-auto px-5 justify-center align-center">
+      <%= yield %>
+    </div>
+    </div>
+  <%= render 'shared/color_sample2' %>
+  <%= render 'shared/footer' %>
+  </body>
+</html>

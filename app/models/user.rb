@@ -2,8 +2,11 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :palettes, dependent: :destroy
+  has_many :palette_seconds, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :likes_palettes, through: :likes, source: :palette
+  has_many :like_seconds, dependent: :destroy
+  has_many :like_seconds_palette_seconds, through: :like_seconds, source: :palette_second
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -32,5 +35,17 @@ class User < ApplicationRecord
 
   def like?(palette)
     palette.likes.pluck(:user_id).include?(id)
+  end
+
+  def like_second(palette_second)
+    like_seconds_palette_seconds << palette_second
+  end
+
+  def unlike_second(palette_second)
+    like_seconds_palette_seconds.destroy(palette_second)
+  end
+
+  def like_second?(palette_second)
+    palette_second.like_seconds.pluck(:user_id).include?(id)
   end
 end

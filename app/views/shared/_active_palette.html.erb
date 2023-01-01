@@ -1,0 +1,24 @@
+<div class="flex my-5">
+  <% if %w[new_palette new_palette_second root].any? {|name| current_page?(send("#{name}_path"))} %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", new_palette_path, class: "p-1 block #{active_if('palettes')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", new_palette_second_path, class: "p-1 block #{active_if('palette_seconds')}", data: {"turbolinks" => false} %>
+    </div>
+  <% elsif %w[palettes palette_seconds].any? {|name| current_page?(send("#{name}_path"))} %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", palettes_path, class: "p-1 block #{active_if('palettes')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", palette_seconds_path, class: "p-1 block #{active_if('palette_seconds')}", data: {"turbolinks" => false} %>
+    </div>
+  <% elsif %w[mypage_palettes_likes mypage_palette_seconds_likes].any? {|name| current_page?(send("#{name}_path"))} %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", mypage_palettes_likes_path, class: "p-1 block #{active_if('mypage/colors')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", mypage_palette_seconds_likes_path, class: "p-1 block #{active_if('mypage/color_seconds')}", data: {"turbolinks" => false} %>
+    </div>
+  <% end %>
+</div>
