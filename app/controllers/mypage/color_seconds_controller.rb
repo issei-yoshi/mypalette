@@ -6,6 +6,6 @@ class Mypage::ColorSecondsController < ApplicationController
   end
 
   def likes
-    @palette_seconds = current_user.like_seconds_palette_seconds.includes([:user, :likes]).page(params[:page])
+    @palette_seconds = current_user.like_seconds_palette_seconds.includes([:user, :like_seconds]).page(params[:page])
   end
 end
