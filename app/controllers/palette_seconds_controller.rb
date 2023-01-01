@@ -1,6 +1,6 @@
 class PaletteSecondsController < ApplicationController
   skip_before_action :require_login, only: [:new, :index]
-  layout 'layouts/palette_seconds' #暫定対応
+  layout 'layouts/palette_seconds'
 
   def index
     palette_seconds = if (tag_second_name = params[:tag_second_name])
