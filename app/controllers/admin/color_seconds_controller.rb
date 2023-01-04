@@ -9,7 +9,7 @@ class Admin::ColorSecondsController < Admin::BaseController
   def show; end
 
   def edit
-    render layout: 'admin/layouts/application'
+    render layout: 'layouts/palette_seconds'
   end
 
   def update

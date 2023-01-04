@@ -1,0 +1,80 @@
+<%= form_with model: @palette_second, url: admin_color_second_path(@palette_second), local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="sm:flex justify-center my-5">
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :main, "Main Color" %>
+        </div>
+        <div class="my-auto">
+          <%= f.color_field :main, class: "main-color colorinput my-auto", value: @palette_second.main %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= @palette_second.main %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :sub, "Sub Color" %>
+        </div>
+        <div  class="my-auto">
+          <%= f.color_field :sub, class: "sub-color colorinput my-auto", value: @palette_second.sub %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= @palette_second.sub %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :body, "Body Color" %>
+        </div>
+        <div  class="my-auto">
+          <%= f.color_field :body, class: "body-color colorinput my-auto", value: @palette_second.body %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= @palette_second.body %>
+      </div>
+    </div>
+
+    <div class="border border-b-2 m-1 p-4 bg-gray-50 hover:bg-white">
+      <div class="flex ">
+        <div class="px-3 my-auto w-4/6">
+          <%= f.label :bg, "bg Color" %>
+        </div>
+        <div  class="my-auto">
+          <%= f.color_field :bg, class: "bg-color colorinput my-auto", value: @palette_second.bg %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= @palette_second.bg %>
+      </div>
+    </div>
+
+    <div class="text-center my-auto m-1">
+      <%= f.submit '更新', class: "bg-green-400 hover:bg-green-300 text-white rounded px-3 py-2 my-1" %>
+    </div>
+  </div>
+
+    <div class="mb-5 text-center">
+      <%= f.collection_check_boxes(:tag_second_ids, TagSecond.all, :id, :name) do |tag| %>
+        <%= tag.label do %>
+          <%= tag.check_box %>
+          <%= tag.text %>
+        <% end %>
+      <% end %>
+    </div>
+
+<% end %>
+
+<%= javascript_pack_tag 'color/initial_main_change' %>
+<%= javascript_pack_tag 'color/initial_sub_change' %>
+<%= javascript_pack_tag 'color/initial_body_change' %>
+<%= javascript_pack_tag 'color/initial_bg_change' %>
