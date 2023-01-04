@@ -2,7 +2,7 @@ class Mypage::ColorsController < ApplicationController
   layout 'layouts/colorless'
 
   def palettes
-    @palettes = current_user.palettes.includes(:tags).page(params[:page])
+    @palettes = current_user.palettes.order(created_at: :desc).includes(:tags).page(params[:page])
   end
 
   def likes
