@@ -26,5 +26,4 @@ RSpec.describe 'UserSessions' do
       end
     end
   end
-
 end
