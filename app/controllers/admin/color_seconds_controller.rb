@@ -25,7 +25,7 @@ class Admin::ColorSecondsController < Admin::BaseController
   def destroy
     @palette_second.destroy!
     flash[:success] = "カラーを削除しました"
-    redirect_to admin_colors_path
+    redirect_to admin_color_seconds_path
   end
 
   private
