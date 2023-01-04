@@ -15,7 +15,7 @@ class Admin::ColorSecondsController < Admin::BaseController
   def update
     if @palette_second.update(palette_params)
       flash[:success] = "カラー編集に成功しました"
-      redirect_to admin_colors_path
+      redirect_to admin_color_seconds_path
     else
       flash.now[:danger] = "カラー編集に失敗しました"
       render :edit
@@ -31,7 +31,7 @@ class Admin::ColorSecondsController < Admin::BaseController
   private
 
   def palette_params
-    params.require(:palette).permit(:main, :sub, :body, :bg, tag_second_ids: [])
+    params.require(:palette_second).permit(:main, :sub, :body, :bg, tag_second_ids: [])
   end
 
   def set_palette
