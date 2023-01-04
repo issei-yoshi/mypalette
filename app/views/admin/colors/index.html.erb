@@ -5,7 +5,7 @@
       <%= "作成者: " %><%= palette.user.name %>
     </div>
     <div>
-      <%= "作成日: " %><%= palette.created_at %>
+      <%= "作成日: " %><%= l palette.created_at %>
     </div>
     <%= render partial: 'shared/unablecolor', locals: {palette: palette} %>
   <% end %>
