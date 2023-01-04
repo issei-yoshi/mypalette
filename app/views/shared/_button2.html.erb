@@ -1,5 +1,12 @@
 <div class =" w-full">
-  <% if %w[palette_seconds mypage_palette_seconds mypage_palette_seconds_likes].any? {|name| current_page?(send("#{name}_path"))} %>
+  <% if %w[admin_color_seconds].any? {|name| current_page?(send("#{name}_path"))} %>
+    <button class="text-white my-2 w-12">
+      <%= link_to "編集", edit_admin_color_second_path(palette_second), class:"bg-green-400 hover:bg-green-300 px-2 py-2 rounded", data: {"turbolinks" => false} %>
+    </button>
+    <button class="text-white my-2 w-12">
+      <%= link_to "削除", admin_color_second_path(palette_second), class:"bg-red-500 hover:bg-red-400 px-2 py-2 rounded", method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
+    </button>
+  <% elsif %w[palette_seconds mypage_palette_seconds mypage_palette_seconds_likes].any? {|name| current_page?(send("#{name}_path"))} %>
     <%= render 'shared/unlike_detail_button2', palette_second: palette_second %>
   <% elsif current_user.own?(palette_second) %>
     <button class="text-white my-2 w-12">
