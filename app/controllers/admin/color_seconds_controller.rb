@@ -3,7 +3,7 @@ class Admin::ColorSecondsController < Admin::BaseController
   before_action :set_palette, only: [:edit, :update, :destroy]
 
   def index
-    @palette_seconds = PaletteSecond.includes(:user).page(params[:page])
+    @palette_seconds = PaletteSecond.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show; end
