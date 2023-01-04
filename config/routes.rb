@@ -35,5 +35,6 @@ Rails.application.routes.draw do
 
     resources :users, only: [:index, :show, :edit, :update, :destroy]
     resources :colors, only: [:index, :show, :edit, :update, :destroy]
+    resources :color_seconds, only: [:index, :show, :edit, :update, :destroy]
   end
 end

@@ -1,0 +1,15 @@
+<%= render 'shared/active_palette' %>
+<div class="md:w-3/4 my-5 mx-auto">
+  <% @palette_seconds.each do |palette_second| %>
+    <div>
+      <%= "作成者: " %><%= palette_second.user.name %>
+    </div>
+    <div>
+      <%= "作成日: " %><%= l palette_second.created_at %>
+    </div>
+    <%= render partial: 'shared/unablecolor2', locals: {palette_second: palette_second} %>
+  <% end %>
+  <div class="">
+    <%= paginate @palette_seconds %>
+  </div>
+</div>

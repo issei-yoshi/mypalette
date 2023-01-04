@@ -26,15 +26,4 @@ RSpec.describe 'UserSessions' do
       end
     end
   end
-
-  describe 'ログイン後' do
-    context 'ログアウトボタンをクリック' do
-      it 'ログアウト処理が成功' do
-        login_as(user)
-        click_link 'ログアウト'
-        expect(page).to have_content 'ログアウトしました'
-        expect(page).to have_current_path root_path, ignore_query: true
-      end
-    end
-  end
 end

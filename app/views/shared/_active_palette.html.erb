@@ -20,5 +20,12 @@
     <div class="text-center w-1/2">
       <%= link_to "Web App Look", mypage_palette_seconds_likes_path, class: "p-1 block #{active_if('mypage/color_seconds')}", data: {"turbolinks" => false} %>
     </div>
+  <% elsif %w[admin_colors admin_color_seconds].any? {|name| current_page?(send("#{name}_path"))} %>
+    <div class="text-center w-1/2">
+      <%= link_to "Web Site Look", admin_colors_path, class: "p-1 block #{active_if('admin/colors')}", data: {"turbolinks" => false} %>
+    </div>
+    <div class="text-center w-1/2">
+      <%= link_to "Web App Look", admin_color_seconds_path, class: "p-1 block #{active_if('admin/color_seconds')}", data: {"turbolinks" => false} %>
+    </div>
   <% end %>
 </div>

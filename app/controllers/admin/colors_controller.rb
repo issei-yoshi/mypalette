@@ -3,7 +3,7 @@ class Admin::ColorsController < Admin::BaseController
   before_action :set_palette, only: [:edit, :update, :destroy]
 
   def index
-    @palettes = Palette.includes(:user).page(params[:page])
+    @palettes = Palette.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show; end

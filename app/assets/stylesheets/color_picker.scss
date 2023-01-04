@@ -11,14 +11,12 @@
 .colorinput::-webkit-color-swatch {
  border-radius: 50%;
  border: none;
- 
 }
 
 .bg-input {
   background-color: black;
   border-radius: 50%;
   border: none;
-  
   width: 40px;
   height: 40px;
   margin-left: 2px;
@@ -28,7 +26,6 @@
 .bg-input-n {
   border-radius: 50%;
   border: none;
-  
   width: 40px;
   height: 40px;
   margin-left: 2px;
@@ -36,11 +33,11 @@
 }
 
 select.bg-input {
--webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
--moz-appearance: none; /* ベンダープレフィックス(Firefox用) */
-appearance: none; /* 標準のスタイルを無効にする */
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 }
-::-ms-expand { /* select要素のデザインを無効にする（IE用） */
+::-ms-expand {
 display: none;
 }
 
