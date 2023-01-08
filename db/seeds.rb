@@ -17,17 +17,17 @@
 #   { name: 'Orange' }
 # ])
 
-TagSecond.create([
-  { name: 'Black' },
-  { name: 'Grey' },
-  { name: 'White' },
-  { name: 'Red' },
-  { name: 'Blue' },
-  { name: 'Green' },
-  { name: 'Yellow' },
-  { name: 'Purple' },
-  { name: 'Orange' }
-])
+# TagSecond.create([
+#   { name: 'Black' },
+#   { name: 'Grey' },
+#   { name: 'White' },
+#   { name: 'Red' },
+#   { name: 'Blue' },
+#   { name: 'Green' },
+#   { name: 'Yellow' },
+#   { name: 'Purple' },
+#   { name: 'Orange' }
+# ])
 
 # User.create(
 #   name: 'issei',
@@ -36,3 +36,15 @@ TagSecond.create([
 #   password_confirmation: Rails.application.credentials.admin_user[:password],
 #   role: :admin
 # )
+
+Tag.create([
+  { name: 'Pink' },
+  { name: 'Brown' },
+  { name: 'Beige' }
+])
+
+TagSecond.create([
+  { name: 'Pink' },
+  { name: 'Brown' },
+  { name: 'Beige' }
+])

@@ -1,2 +1,8 @@
+<% if %w[root].any? {|name| current_page?(send("#{name}_path"))} %>
+  <% set_meta_tags title: '' %>
+<% else %>
+  <% set_meta_tags title: 'Web Site Look' %>
+<% end %>
+
 <%= render 'shared/active_palette' %>
 <%= render 'form', {palette: @palette} %>
