@@ -3,6 +3,11 @@
 ## MyPalette(マイパレット)
 [https://mypalette.link](https://mypalette.link)
 
+## テストユーザーアカウント（※デモを行いたい場合には、以下アカウントでログインしてください）
+Email: test_user@example.com
+
+Password: test_user
+
 
 ## サービス概要
 MyPalette(マイパレット)は、デモのwebサイト/アプリ上で色を自由に操作し、理想の配色を見つけることのできるサービスです。
