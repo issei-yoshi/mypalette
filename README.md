@@ -12,8 +12,7 @@ webサイト制作やwebアプリケーション開発を行う上で、配色�
 
 ## メイン機能
 ### Web Site Lookの色を変える&保存後にカラーコードをコピーする
-![MyPalette](/app/assets/images/websitelook_first.png)
-![MyPalette](/app/assets/images/websitelook_after.png)
+![MyPalette](/app/assets/images/websitelook_first.png)![MyPalette](/app/assets/images/websitelook_after.png)
 
 ## ■ユーザーが抱える課題
 - webサイトを制作する上で、どのような配色が良いのか分からず、Figma等でいちいち色変更する手間がかかってしまっている
