@@ -1,7 +1,7 @@
 ![MyPalette](/app/assets/images/ogp.png)
 
-## mypalette
-[https://mypalette.link/](https://mypalette.link/)
+## MyPalette(マイパレット)
+[https://mypalette.link](https://mypalette.link)
 
 
 ## サービス概要
@@ -41,7 +41,7 @@ Web Site Look(もしくはWeb App Look)のカラーパレット操作のみ、�
 ユーザー登録をする事で、配色の保存、他ユーザーの配色閲覧、お気に入り登録等が可能となり、より便利にご利用いただけます。
 ![MyPalette](/app/assets/images/Frame3.png)
 
-
+***
 ## 使用技術
 | バックエンド | フロントエンド | その他 |
 | ---- | ---- | ---- |
