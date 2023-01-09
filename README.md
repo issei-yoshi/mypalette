@@ -1,4 +1,5 @@
 # mypalette
+![MyPalette](/app/assets/images/ogp.png)
 ## ■サービス概要
 webサイトやポートフォリオの制作を考えていて配色を決めたい人が
 
