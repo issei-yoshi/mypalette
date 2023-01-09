@@ -3,6 +3,7 @@
 ## mypalette
 [https://mypalette.link/](https://mypalette.link/)
 
+
 ## サービス概要
 MyPalette(マイパレット)は、デモのwebサイト/アプリ上で色を自由に操作し、理想の配色を見つけることのできるサービスです。
 
@@ -10,6 +11,7 @@ MyPalette(マイパレット)は、デモのwebサイト/アプリ上で色を�
 
 webサイト制作やwebアプリケーション開発を行う上で、配色は悩むポイントの1つです。
 自身の理想の配色を見つけたい全てのweb系クリエイターをMyPalette(マイパレット)は応援します。
+
 
 ## メイン機能
 ### Web Site Look(もしくはWeb App Look)の色を変更して配色を確認 & 保存後にカラーコードをコピーする
@@ -21,6 +23,7 @@ webサイト制作やwebアプリケーション開発を行う上で、配色�
 保存後はカラーコードが表示されるため、該当のカラーコードを元に自身のwebサイト/アプリの配色に活用いただけます。
 ![MyPalette](/app/assets/images/Frame1.png)
 
+
 ### 他ユーザーが作成したWeb Site Look(もしくはWeb App Look)のカラーコードをコピーする & 気に入った配色をお気に入り登録
 他ユーザーが作成したWeb Site Look(もしくはWeb App Look)の配色を元とした、デモwebサイト/アプリの配色を閲覧する事ができます。
 また、該当のカラーコードが表示されるため、他ユーザーの配色を元に自身のwebサイト/アプリの配色に活用いただく事が可能です。
@@ -30,6 +33,7 @@ webサイト制作やwebアプリケーション開発を行う上で、配色�
 タグをクリックする事で、そのタグに絞り込んだ配色を表示し、ご自身のお好きなテイスト・カラーを見つけやすくする事ができます。
 ![MyPalette](/app/assets/images/Frame2.png)
 
+
 ### ユーザー新規登録 & ユーザーログイン & パスワードリセット機能
 ユーザーの新規登録〜ログイン、パスワードリセットを行う事ができます。
 Web Site Look(もしくはWeb App Look)のカラーパレット操作のみ、未登録ユーザーでも可能となっています。
@@ -37,10 +41,12 @@ Web Site Look(もしくはWeb App Look)のカラーパレット操作のみ、�
 ユーザー登録をする事で、配色の保存、他ユーザーの配色閲覧、お気に入り登録等が可能となり、より便利にご利用いただけます。
 ![MyPalette](/app/assets/images/Frame3.png)
 
+
 ## 使用技術
 | バックエンド | フロントエンド | その他 |
 | ---- | ---- | ---- |
 | Ruby(3.1.2)<br>Ruby on Rails(6.1.6) | TailwindCSS<br>JavaScript | PostgreSQL |
+
 
 ### ER図
 ![MyPalette](/app/assets/images/mypalettes.drawio.png)
