@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :guest_login]
   layout 'layouts/colorless'
 
   def new; end
@@ -18,6 +18,18 @@ class UserSessionsController < ApplicationController
   def destroy
     logout
     flash[:success] = "ログアウトしました"
+    redirect_to root_path
+  end
+
+  def guest_login
+    @guest_user = User.create(
+      name: 'ゲスト',
+      email: SecureRandom.alphanumeric(10) + "@example.com",
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    auto_login(@guest_user)
+    flash[:success] = 'ゲストとしてログインしました'
     redirect_to root_path
   end
 end

@@ -37,4 +37,6 @@ Rails.application.routes.draw do
     resources :colors, only: [:index, :show, :edit, :update, :destroy]
     resources :color_seconds, only: [:index, :show, :edit, :update, :destroy]
   end
+
+  post '/guest_login', to: 'user_sessions#guest_login'
 end
