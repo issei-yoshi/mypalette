@@ -20,4 +20,16 @@ class UserSessionsController < ApplicationController
     flash[:success] = "ログアウトしました"
     redirect_to root_path
   end
+
+  def guest_login
+    @guest_user = User.create(
+      name: 'ゲスト',
+      email: SecureRandom.alphanumeric(10) + "@example.com",
+      password: 'password',
+      password_confirmation: 'password'
+    )
+    auto_login(@guest_user)
+    flash[:success] = 'ゲストとしてログインしました'
+    redirect_to root_path
+  end
 end
