@@ -3,10 +3,8 @@
 ## MyPalette(マイパレット)
 [https://mypalette.link](https://mypalette.link)
 
-## テストユーザーアカウント（※デモを行いたい場合には、以下アカウントでログインしてください）
-Email: test_user@example.com
-
-Password: test_user
+## ゲストユーザー
+サービス画面の上部より、ゲストログインが可能です。
 
 
 ## サービス概要
