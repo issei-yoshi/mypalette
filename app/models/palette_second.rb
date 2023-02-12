@@ -4,5 +4,7 @@ class PaletteSecond < ApplicationRecord
   has_many :palette_second_tags, dependent: :destroy
   has_many :tag_seconds, through: :palette_second_tags
 
+  validates :main, presence: true
+
   scope :with_tag, ->(tag_second_name) { joins(:tag_seconds).where(tag_seconds: { name: tag_second_name }) }
 end
