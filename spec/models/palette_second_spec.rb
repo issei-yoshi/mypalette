@@ -11,5 +11,12 @@ RSpec.describe 'Platte_secondモデルのテスト' do
         expect(palette_second.valid?).to be false
       end
     end
+
+    context 'subカラム' do
+      it '空欄の場合は作成できない' do
+        palette_second = build(:palette_second, sub: '')
+        expect(palette_second.valid?).to be false
+      end
+    end
   end
 end
