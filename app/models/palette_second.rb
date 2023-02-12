@@ -7,6 +7,7 @@ class PaletteSecond < ApplicationRecord
   validates :main, presence: true
   validates :sub, presence: true
   validates :body, presence: true
+  validates :bg, presence: true
 
   scope :with_tag, ->(tag_second_name) { joins(:tag_seconds).where(tag_seconds: { name: tag_second_name }) }
 end
