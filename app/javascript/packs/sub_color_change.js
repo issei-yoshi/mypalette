@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let subChangeEls = document.querySelectorAll('.sub-change');
   let subChangeElBgs = document.querySelectorAll('.sub-change-bg');
 
+  const rhex = 0.299
+  const ghex = 0.587
+  const bhex = 0.114
+
   sub.addEventListener('input', function(e){
     const colorVal = e.target.value
 
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const red = rgbVal.substr( 0, 2 );
       const green = rgbVal.substr( 2, 2 );
       const blue = rgbVal.substr( 4, 2 );
-      const brightness = Math.floor((parseInt(red, 16) * 0.299) + (parseInt(green, 16) * 0.587) + (parseInt(blue, 16) * 0.114))
+      const brightness = Math.floor((parseInt(red, 16) * rhex) + (parseInt(green, 16) * ghex) + (parseInt(blue, 16) * bhex))
       const textColor = brightness >= 140 ? '#000000' : '#FFFFFF'
 
       el.style.color = textColor;
