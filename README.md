@@ -3,10 +3,6 @@
 ## MyPalette(マイパレット)
 [https://mypalette.link](https://mypalette.link)
 
-※現在エラーが起きているため、下記リンクで操作をお願いいたします。
-
-[https://mypalette-clone.herokuapp.com/](https://mypalette-clone.herokuapp.com/)
-
 ## ゲストユーザー
 サービス画面の上部より、ゲストログインが可能です。
 
